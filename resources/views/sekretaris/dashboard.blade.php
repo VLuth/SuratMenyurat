@@ -4,22 +4,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Atlantis Lite Bootstrap Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{ asset('Atlantis-Lite-master')}}/assets/img/icon.ico" type="image/x-icon"/>
+	<link rel="icon" href="{{asset('Atlantis')}}/assets/img/icon.ico" type="image/x-icon"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script src="{{asset('Atlantis')}}/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{ asset('Atlantis-Lite-master')}}/assets/css/fonts.min.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{asset('Atlantis')}}/assets/css/fonts.min.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
 		});
 	</script>
 
-	<link rel="stylesheet" href="{{ asset('Atlantis-Lite-master')}}/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{ asset('Atlantis-Lite-master')}}/assets/css/atlantis.min.css">
+	<link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/atlantis.min.css">
 	<link href="assets/styles.css" rel="stylesheet" />
 	<link href="assets/prism.css" rel="stylesheet" />
 </head>
@@ -28,7 +28,7 @@
 		<div class="main-header">
 			<div class="logo-header" data-background-color="light-blue2">
 				<a href="index.html" class="logo">
-					<img src="{{ asset('Atlantis-Lite-master')}}/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+					<img src="{{asset('Atlantis')}}/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -46,7 +46,7 @@
 				<div class="container-fluid">
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item">
-							<a href="{{ asset('Atlantis-Lite-master')}}/examples/demo1" class="nav-link">
+							<a href="{{asset('Atlantis')}}/examples/demo1" class="nav-link">
 								Live Preview
 							</a>
 						</li>
@@ -314,42 +314,42 @@
 							<pre class="language-markup">
 								<code class="language-markup">
 									&lt;!--   Core JS Files   --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/popper.min.js"&gt;&lt;/script&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- jQuery UI --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- jQuery Scrollbar --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
 
 
 &lt;!-- Chart JS --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- jQuery Sparkline --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Chart Circle --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Datatables --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Bootstrap Notify --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- jQuery Vector Maps --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
 
 &lt;!-- Sweet Alert --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
 
 &lt;!-- Atlantis JS --&gt;
-&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/atlantis.min.js"&gt;&lt;/script&gt;
+&lt;script src="{{asset('Atlantis')}}/assets/js/atlantis.min.js"&gt;&lt;/script&gt;
 								</code>
 							</pre>
 							<h5 id="fonts">Fonts and Icons</h5>
@@ -357,11 +357,11 @@
 							<figure class="highlight">
 								<pre class="language-markup">
 									<code class="language-markup">
-										&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
+										&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
 										&lt;script&gt;
 											WebFont.load({
 												google: {"families":["Lato:300,400,700,900"]},
-												custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{ asset('Atlantis-Lite-master')}}/assets/css/fonts.min.css']},
+												custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{asset('Atlantis')}}/assets/css/fonts.min.css']},
 												active: function() {
 													sessionStorage.fonts = true;
 												}
@@ -410,14 +410,14 @@
 	&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
 	&lt;title&gt;Atlantis Lite - Bootstrap 4 Admin Dashboard&lt;/title&gt;
 	&lt;meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' /&gt;
-	&lt;link rel="icon" href="{{ asset('Atlantis-Lite-master')}}/assets/img/icon.ico" type="image/x-icon"/&gt;
+	&lt;link rel="icon" href="{{asset('Atlantis')}}/assets/img/icon.ico" type="image/x-icon"/&gt;
 
 	&lt;!-- Fonts and icons --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/webfont/webfont.min.js"&gt;&lt;/script&gt;
 	&lt;script&gt;
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{ asset('Atlantis-Lite-master')}}/assets/css/fonts.min.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{asset('Atlantis')}}/assets/css/fonts.min.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -425,11 +425,11 @@
 	&lt;/script&gt;
 
 	&lt;!-- CSS Files --&gt;
-	&lt;link rel="stylesheet" href="{{ asset('Atlantis-Lite-master')}}/assets/css/bootstrap.min.css"&gt;
-	&lt;link rel="stylesheet" href="{{ asset('Atlantis-Lite-master')}}/assets/css/atlantis.min.css"&gt;
+	&lt;link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/bootstrap.min.css"&gt;
+	&lt;link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/atlantis.min.css"&gt;
 
 	&lt;!-- CSS Just for demo purpose, don't include it in your project --&gt;
-	&lt;link rel="stylesheet" href="{{ asset('Atlantis-Lite-master')}}/assets/css/demo.css"&gt;
+	&lt;link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/demo.css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
 	&lt;div class="wrapper"&gt;
@@ -438,7 +438,7 @@
 			&lt;div class="logo-header" data-background-color="blue"&gt;
 				
 				&lt;a href="index.html" class="logo"&gt;
-					&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/logo.svg" alt="navbar brand" class="navbar-brand"&gt;
+					&lt;img src="{{asset('Atlantis')}}/assets/img/logo.svg" alt="navbar brand" class="navbar-brand"&gt;
 				&lt;/a&gt;
 				&lt;button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation"&gt;
 					&lt;span class="navbar-toggler-icon"&gt;
@@ -492,7 +492,7 @@
 										&lt;div class="notif-center"&gt;
 											&lt;a href="#"&gt;
 												&lt;div class="notif-img"&gt; 
-													&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/jm_denis.jpg" alt="Img Profile"&gt;
+													&lt;img src="{{asset('Atlantis')}}/assets/img/jm_denis.jpg" alt="Img Profile"&gt;
 												&lt;/div&gt;
 												&lt;div class="notif-content"&gt;
 													&lt;span class="subject"&gt;Jimmy Denis&lt;/span&gt;
@@ -504,7 +504,7 @@
 											&lt;/a&gt;
 											&lt;a href="#"&gt;
 												&lt;div class="notif-img"&gt; 
-													&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/chadengle.jpg" alt="Img Profile"&gt;
+													&lt;img src="{{asset('Atlantis')}}/assets/img/chadengle.jpg" alt="Img Profile"&gt;
 												&lt;/div&gt;
 												&lt;div class="notif-content"&gt;
 													&lt;span class="subject"&gt;Chad&lt;/span&gt;
@@ -516,7 +516,7 @@
 											&lt;/a&gt;
 											&lt;a href="#"&gt;
 												&lt;div class="notif-img"&gt; 
-													&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/mlane.jpg" alt="Img Profile"&gt;
+													&lt;img src="{{asset('Atlantis')}}/assets/img/mlane.jpg" alt="Img Profile"&gt;
 												&lt;/div&gt;
 												&lt;div class="notif-content"&gt;
 													&lt;span class="subject"&gt;Jhon Doe&lt;/span&gt;
@@ -528,7 +528,7 @@
 											&lt;/a&gt;
 											&lt;a href="#"&gt;
 												&lt;div class="notif-img"&gt; 
-													&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/talha.jpg" alt="Img Profile"&gt;
+													&lt;img src="{{asset('Atlantis')}}/assets/img/talha.jpg" alt="Img Profile"&gt;
 												&lt;/div&gt;
 												&lt;div class="notif-content"&gt;
 													&lt;span class="subject"&gt;Talha&lt;/span&gt;
@@ -578,7 +578,7 @@
 											&lt;/a&gt;
 											&lt;a href="#"&gt;
 												&lt;div class="notif-img"&gt; 
-													&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/profile2.jpg" alt="Img Profile"&gt;
+													&lt;img src="{{asset('Atlantis')}}/assets/img/profile2.jpg" alt="Img Profile"&gt;
 												&lt;/div&gt;
 												&lt;div class="notif-content"&gt;
 													&lt;span class="block"&gt;
@@ -660,14 +660,14 @@
 						&lt;li class="nav-item dropdown hidden-caret"&gt;
 							&lt;a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"&gt;
 								&lt;div class="avatar-sm"&gt;
-									&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
+									&lt;img src="{{asset('Atlantis')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
 								&lt;/div&gt;
 							&lt;/a&gt;
 							&lt;ul class="dropdown-menu dropdown-user animated fadeIn"&gt;
 								&lt;div class="dropdown-user-scroll scrollbar-outer"&gt;
 									&lt;li&gt;
 										&lt;div class="user-box"&gt;
-											&lt;div class="avatar-lg"&gt;&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"&gt;&lt;/div&gt;
+											&lt;div class="avatar-lg"&gt;&lt;img src="{{asset('Atlantis')}}/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"&gt;&lt;/div&gt;
 											&lt;div class="u-text"&gt;
 												&lt;h4&gt;Hizrian&lt;/h4&gt;
 												&lt;p class="text-muted"&gt;hello@example.com&lt;/p&gt;&lt;a href="profile.html" class="btn btn-xs btn-secondary btn-sm"&gt;View Profile&lt;/a&gt;
@@ -699,7 +699,7 @@
 				&lt;div class="sidebar-content"&gt;
 					&lt;div class="user"&gt;
 						&lt;div class="avatar-sm float-left mr-2"&gt;
-							&lt;img src="{{ asset('Atlantis-Lite-master')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
+							&lt;img src="{{asset('Atlantis')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"&gt;
 						&lt;/div&gt;
 						&lt;div class="info"&gt;
 							&lt;a data-toggle="collapse" href="#collapseExample" aria-expanded="true"&gt;
@@ -742,12 +742,12 @@
 							&lt;div class="collapse" id="dashboard"&gt;
 								&lt;ul class="nav nav-collapse"&gt;
 									&lt;li&gt;
-										&lt;a href="{{ asset('Atlantis-Lite-master')}}/demo1/index.html"&gt;
+										&lt;a href="{{asset('Atlantis')}}/demo1/index.html"&gt;
 											&lt;span class="sub-item"&gt;Dashboard 1&lt;/span&gt;
 										&lt;/a&gt;
 									&lt;/li&gt;
 									&lt;li&gt;
-										&lt;a href="{{ asset('Atlantis-Lite-master')}}/demo2/index.html"&gt;
+										&lt;a href="{{asset('Atlantis')}}/demo2/index.html"&gt;
 											&lt;span class="sub-item"&gt;Dashboard 2&lt;/span&gt;
 										&lt;/a&gt;
 									&lt;/li&gt;
@@ -1039,7 +1039,7 @@
 							&lt;/li&gt;
 							&lt;li class="nav-item"&gt;
 								&lt;a class="nav-link" href="#"&gt;
-									Licensess
+									Licenses
 								&lt;/a&gt;
 							&lt;/li&gt;
 						&lt;/ul&gt;
@@ -1053,42 +1053,42 @@
 		
 	&lt;/div&gt;
 	&lt;!--   Core JS Files   --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/popper.min.js"&gt;&lt;/script&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/core/bootstrap.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- jQuery UI --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- jQuery Scrollbar --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"&gt;&lt;/script&gt;
 
 
 	&lt;!-- Chart JS --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/chart.js/chart.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- jQuery Sparkline --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- Chart Circle --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/chart-circle/circles.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- Datatables --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/datatables/datatables.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- Bootstrap Notify --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- jQuery Vector Maps --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"&gt;&lt;/script&gt;
 
 	&lt;!-- Sweet Alert --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/plugin/sweetalert/sweetalert.min.js"&gt;&lt;/script&gt;
 
 	&lt;!-- Atlantis JS --&gt;
-	&lt;script src="{{ asset('Atlantis-Lite-master')}}/assets/js/atlantis.min.js"&gt;&lt;/script&gt;
+	&lt;script src="{{asset('Atlantis')}}/assets/js/atlantis.min.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 						</code>
@@ -1102,19 +1102,19 @@
 </div>
 </div>
 </body>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/popper.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/core/bootstrap.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/chart.js/chart.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-<script type="text/javascript" src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-<script type="text/javascript" src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" charset="utf-8"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/chart-circle/circles.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script src="{{ asset('Atlantis-Lite-master')}}/assets/js/atlantis.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/core/bootstrap.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/plugin/chart.js/chart.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script type="text/javascript" src="{{asset('Atlantis')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+<script type="text/javascript" src="{{asset('Atlantis')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js" charset="utf-8"></script>
+<script src="{{asset('Atlantis')}}/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="{{asset('Atlantis')}}/assets/js/atlantis.min.js"></script>
 <script src="assets/prism.js"></script>
 <script src="assets/prism-normalize-whitespace.min.js"></script>
 <script type="text/javascript">
