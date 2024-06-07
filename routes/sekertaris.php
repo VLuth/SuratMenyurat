@@ -1039,7 +1039,7 @@
 							&lt;/li&gt;
 							&lt;li class="nav-item"&gt;
 								&lt;a class="nav-link" href="#"&gt;
-									Licenses
+									Licensess
 								&lt;/a&gt;
 							&lt;/li&gt;
 						&lt;/ul&gt;
