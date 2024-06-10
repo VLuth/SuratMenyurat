@@ -326,11 +326,7 @@
                     <h4 class="text-section">Components</h4>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="collapse" href="#base">
-                        <i class="fas fa-layer-group"></i>
-                        <p>Base</p>
-                        <span class="caret"></span>
-                    </a>
+                    
                     <div class="collapse" id="base">
                         <ul class="nav nav-collapse">
                             <li>
@@ -389,24 +385,24 @@
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#sidebarLayouts">
                         <i class="fas fa-th-list"></i>
-                        <p>Sidebar Layouts</p>
+                        <p>Surat Masuk</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="sidebarLayouts">
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="sidebar-style-1.html">
-                                    <span class="sub-item">Sidebar Style 1</span>
+                                    <span class="sub-item">Surat Masuk</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="overlay-sidebar.html">
-                                    <span class="sub-item">Overlay Sidebar</span>
+                                    <span class="sub-item">Verifikasi</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="compact-sidebar.html">
-                                    <span class="sub-item">Compact Sidebar</span>
+                                    <span class="sub-item">Disposisi</span>
                                 </a>
                             </li>
                             <li>
@@ -460,55 +456,8 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="collapse" href="#maps">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Maps</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="maps">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="maps/jqvmap.html">
-                                    <span class="sub-item">JQVMap</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#charts">
-                        <i class="far fa-chart-bar"></i>
-                        <p>Charts</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="charts">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="charts/charts.html">
-                                    <span class="sub-item">Chart Js</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="charts/sparkline.html">
-                                    <span class="sub-item">Sparkline</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="widgets.html">
-                        <i class="fas fa-desktop"></i>
-                        <p>Widgets</p>
-                        <span class="badge badge-success">4</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#submenu">
-                        <i class="fas fa-bars"></i>
-                        <p>Menu Levels</p>
-                        <span class="caret"></span>
-                    </a>
+                    
+                
                     <div class="collapse" id="submenu">
                         <ul class="nav nav-collapse">
                             <li>
@@ -555,11 +504,10 @@
                     </div>
                 </li>
                 <li class="mx-4 mt-2">
-                    <a href="http://themekita.com/atlantis-bootstrap-dashboard.html" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-heart"></i> </span>Buy Pro</a> 
                 </li>
             </ul>
         </div>
     </div>
 </div>
 <!-- End Sidebar -->
-@yield('konten')
+@yield('kontenstaff')
