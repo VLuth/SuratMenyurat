@@ -23,12 +23,36 @@ class SuratMasukController extends Controller
         return view ('tambahsuratmasuk');
     }
 
+    public function __construct(){
+        $this->suratmasuk = new SuratMasuk;
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        $this->suratmasuk->nosurat = $request->nosurat;
+        $this->suratmasuk->perihal = $request->perihal;
+        $this->suratmasuk->tujuan = $request->tujuan;
+        $this->suratmasuk->file = $request->file->store->file;
+
+        $rules = [
+            'nosurat' => 'required',
+            'perihal' => 'required',
+            'tujuan' => 'required'
+        ];
+
+        $message = [
+            'required' => 'form ini harus diisi',
+        ];
+
+        $this->validate($request, $rules, $message);
+
+        $this->suratmasuk->save();
+
+        return redirect()->route('suratmasuk')->with('successtambah', 'data buku berhasil ditambahkan!');
+
     }
 
     /**

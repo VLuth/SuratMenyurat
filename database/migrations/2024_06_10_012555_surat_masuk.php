@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nosurat');
             $table->string('perihal');
             $table->string('tujuan');
+            $table->string('file');
             $table->timestamps();
         });
     }

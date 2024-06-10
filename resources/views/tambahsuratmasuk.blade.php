@@ -58,38 +58,45 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">Form Tambah Surat Masuk</div>
+									<div class="card-title">Tambah Surat Masuk</div>
 								</div>
-								<div class="card-body">
-									<div class="row">
-										<div class="col-md-6 col-lg-4">
-											<div class="form-group">
-												<label for="largeInput">No Surat</label>
-												<input type="text" class="form-control form-control" name="nosurat" id="defaultInput" placeholder="No Surat">
-											</div>
-										</div>
-                                        <div class="col-md-6 col-lg-4">
-											<div class="form-group">
-												<label for="largeInput">Tujuan</label>
-												<input type="text" class="form-control form-control" name="tujuan" id="defaultInput" placeholder="Tujuan">
-											</div>
-										</div>
-									</div>
-								</div>
-                                <div class="card-body">
-									<div class="row">
-                                        <div class="col-md-6 col-lg-4">
-											<div class="form-group">
-												<label for="largeInput">Perihal</label>
-												<input type="text" class="form-control form-control" name="perihal" id="defaultInput" placeholder="Perihal">
-											</div>
-										</div>
+								<form method="POST" action="" enctype="multipart/form-data">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="largeInput">No Surat</label>
+                                                    <input type="text" class="form-control form-control" name="nosurat" id="defaultInput" placeholder="No Surat">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="largeInput">Tujuan</label>
+                                                    <input type="text" class="form-control form-control" name="tujuan" id="defaultInput" placeholder="Tujuan">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-								<div class="card-action">
-									<button class="btn btn-success">Submit</button>
-									<button class="btn btn-danger">Cancel</button>
-								</div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="largeInput">Perihal</label>
+                                                    <input type="text" class="form-control form-control" name="perihal" id="defaultInput" placeholder="Perihal">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1">Example file input</label>
+                                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-action">
+                                        <button class="btn btn-success">Tambah</button>
+                                        <button class="btn btn-warning">Draft</button>
+                                        <button class="btn btn-danger">Batal</button>
+                                    </div>
+                                </form>
 							</div>
 						</div>
 					</div>
