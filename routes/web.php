@@ -6,6 +6,7 @@ use App\Http\Controllers\Staff\StaffController;
 use App\Http\Controllers\Sekretaris\SekretarisController;
 use App\Http\Controllers\Petugas\PetugasController;
 use App\Http\Controllers\Ketua\KetuaController;
+use App\Http\Controllers\SuratMasukController;
 
 Route::get('/', function () {
     return view('welcome');

@@ -1,5 +1,5 @@
-@extends('template.main')
-@section('konten')
+@extends('template.mainstaff')
+@section('kontenstaff')
 
 
 <!DOCTYPE html>
