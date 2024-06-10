@@ -10,4 +10,8 @@ class StaffController extends Controller
     public function index(){
         return view('dashboard');
     }
+
+    public function indexsuratmasuk(){
+        return view('suratmasuk');
+    }
 }
