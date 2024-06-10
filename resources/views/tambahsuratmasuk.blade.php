@@ -60,7 +60,8 @@
 								<div class="card-header">
 									<div class="card-title">Tambah Surat Masuk</div>
 								</div>
-								<form method="POST" action="" enctype="multipart/form-data">
+								<form method="POST"  action={{route('storesuratmasuk')}} enctype="multipart/form-data">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6 col-lg-6">
@@ -92,9 +93,9 @@
                                         </div>
                                     </div>
                                     <div class="card-action">
-                                        <button class="btn btn-success">Tambah</button>
-                                        <button class="btn btn-warning">Draft</button>
-                                        <button class="btn btn-danger">Batal</button>
+                                        <button type="submit" class="btn btn-success">Tambah</button>
+                                        <a class="btn btn-warning">Draft</a>
+                                        <a class="btn btn-danger">Batal</a>
                                     </div>
                                 </form>
 							</div>

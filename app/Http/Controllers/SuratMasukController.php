@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SuratMasuk;
+use App\Models\suratmasuk;
 
-class SuratMasukController extends Controller
+class SuratmasukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,7 +36,7 @@ class SuratMasukController extends Controller
         $this->suratmasuk->nosurat = $request->nosurat;
         $this->suratmasuk->perihal = $request->perihal;
         $this->suratmasuk->tujuan = $request->tujuan;
-        $this->suratmasuk->file = $request->file->store->file;
+        $this->suratmasuk->file = $request->file;
 
         $rules = [
             'nosurat' => 'required',
@@ -47,8 +47,6 @@ class SuratMasukController extends Controller
         $message = [
             'required' => 'form ini harus diisi',
         ];
-
-        $this->validate($request, $rules, $message);
 
         $this->suratmasuk->save();
 

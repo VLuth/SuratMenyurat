@@ -13,7 +13,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboardstaff');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -30,6 +30,7 @@ Route::middleware('auth', "staffMiddleware")->group(function (){
     Route::get('suratmasuk', [StaffController::class, 'indexsuratmasuk'])->name('suratmasuk');
     Route::get('suratkeluar', [StaffController::class, 'indexsuratkeluar'])->name('suratkeluar');
     Route::get('form/suratmasuk', [SuratMasukController::class, 'create'])->name('tambahsuratmasuk');
+    Route::post('form/storesuratmasuk', [SuratMasukController::class, 'store'])->name('storesuratmasuk');
 });
 
 // Sekretaris Routes
