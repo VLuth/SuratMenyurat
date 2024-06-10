@@ -27,6 +27,7 @@ require __DIR__.'/auth.php';
 Route::middleware('auth', "staffMiddleware")->group(function (){
     Route::get('dashboard', [StaffController::class, 'index'])->name('dashboard');
     Route::get('suratmasuk', [StaffController::class, 'indexsuratmasuk'])->name('suratmasuk');
+    Route::get('suratkeluar', [StaffController::class, 'indexsuratkeluar'])->name('suratkeluar');
 });
 
 // Sekretaris Routes
