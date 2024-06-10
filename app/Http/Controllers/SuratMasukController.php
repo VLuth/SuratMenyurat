@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\suratmenyurat;
-use App\Http\Requests\StoresuratmenyuratRequest;
-use App\Http\Requests\UpdatesuratmenyuratRequest;
+use Illuminate\Http\Request;
 
-class SuratmenyuratController extends Controller
+class SuratMasukController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('index');
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class SuratmenyuratController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoresuratmenyuratRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -35,7 +33,7 @@ class SuratmenyuratController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(suratmenyurat $suratmenyurat)
+    public function show(string $id)
     {
         //
     }
@@ -43,7 +41,7 @@ class SuratmenyuratController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(suratmenyurat $suratmenyurat)
+    public function edit(string $id)
     {
         //
     }
@@ -51,7 +49,7 @@ class SuratmenyuratController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatesuratmenyuratRequest $request, suratmenyurat $suratmenyurat)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +57,7 @@ class SuratmenyuratController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(suratmenyurat $suratmenyurat)
+    public function destroy(string $id)
     {
         //
     }
