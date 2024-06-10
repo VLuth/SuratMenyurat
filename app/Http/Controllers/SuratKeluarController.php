@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\SuratKeluar;
 
 use Illuminate\Http\Request;
-use App\Models\SuratMasuk;
 
-class SuratMasukController extends Controller
+class SuratKeluarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $query = SuratMasuk::all();
-        return view ('suratmasuk', compact('query'));
+        $query = SuratKeluar::all();
+        return view ('suratkeluar', compact('query'));
     }
 
     /**
@@ -21,7 +21,7 @@ class SuratMasukController extends Controller
      */
     public function create()
     {
-        return view ('tambahsuratmasuk');
+        return view ('tambahsuratkeluar');
     }
 
     /**

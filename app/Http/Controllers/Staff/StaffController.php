@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Staff;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\SuratMasuk;
+use App\Models\SuratKeluar;
 
 class StaffController extends Controller
 {
