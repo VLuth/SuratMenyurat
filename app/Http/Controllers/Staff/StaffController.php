@@ -15,4 +15,7 @@ class StaffController extends Controller
         $query = SuratMasuk::all();
         return view ('suratmasuk', compact('query'));
     }
+    public function indexsuratkeluar(){
+        return view('suratkeluar');
+    }
 }
