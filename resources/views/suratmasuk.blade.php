@@ -110,7 +110,7 @@
                             </form>
                         </div>
                         <div class="modal-footer no-bd">
-                            <button type="button" id="addRowButton" class="btn btn-primary">Add</button>
+                            <button type="button" href="{{route('tambahsuratmasuk')}}" class="btn btn-primary">Tambah Data</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('suratmasuk', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('nosurat');
+            $table->string('nosurat');
             $table->string('perihal');
             $table->string('tujuan');
             $table->timestamps();

@@ -12,6 +12,7 @@ class StaffController extends Controller
     }
 
     public function indexsuratmasuk(){
-        return view('suratmasuk');
+        $query = SuratMasuk::all();
+        return view ('suratmasuk', compact('query'));
     }
 }

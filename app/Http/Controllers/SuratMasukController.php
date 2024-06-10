@@ -11,7 +11,8 @@ class SuratMasukController extends Controller
      */
     public function index()
     {
-        //
+        $query = SuratMasuk::all();
+        return view ('suratmasuk', compact('query'));
     }
 
     /**
@@ -19,7 +20,7 @@ class SuratMasukController extends Controller
      */
     public function create()
     {
-        //
+        return view ('tambahsuratmasuk');
     }
 
     /**
