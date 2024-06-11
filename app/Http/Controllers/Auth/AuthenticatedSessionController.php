@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
             return redirect(route('sekretaris.dashboard'));
         }
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('dashboardstaff', absolute: false));
     }
 
     /**
