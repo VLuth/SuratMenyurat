@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/871ef6297c.js" crossorigin="anonymous"></script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
@@ -94,11 +95,11 @@
 						</div>
 					</div>
 					<ul class="nav nav-primary">
-						<li class="nav-item">
+						<li class="nav-item active">
 							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
-								<span class="caret"></span>
+								
 							</a>
 							<div class="collapse" id="dashboard">
 							</div>
@@ -111,7 +112,7 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#base">
-								<i class="fas fa-layer-group"></i>
+                                <i class="fa-solid fa-right-to-bracket"></i>	
 								<p>Surat Masuk</p>
 								<span class="caret"></span>
 							</a>
@@ -127,18 +128,23 @@
 											<span class="sub-item">Draft</span>
 										</a>
 									</li>
+                                    <li>
+										<a href="components/buttons.html">
+											<span class="sub-item">Riwayat</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
-						<li class="nav-item active submenu">
+						<li class="nav-item submenu">
 							<a data-toggle="collapse" href="#sidebarLayouts">
-								<i class="fas fa-th-list"></i>
+                                <i class="fa-solid fa-right-from-bracket"></i>
 								<p>Surat Keluar</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse show" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
-									<li class="active">
+									<li>
 										<a href="sidebar-style-1.html">
 											<span class="sub-item">Surat Keluar</span>
 										</a>
@@ -148,12 +154,17 @@
 											<span class="sub-item">Draft</span>
 										</a>
 									</li>
+                                    <li>
+										<a href="components/buttons.html">
+											<span class="sub-item">Riwayat</span>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-pen-square"></i>
+                                <i class="fa-solid fa-database"></i>
 								<p>Master Data</p>
 								<span class="caret"></span>
 							</a>
@@ -161,7 +172,22 @@
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="forms/forms.html">
-											<span class="sub-item">Basic For</span>
+											<span class="sub-item">User</span>
+										</a>
+									</li>
+                                    <li>
+										<a href="components/buttons.html">
+											<span class="sub-item">Bagian</span>
+										</a>
+									</li>
+                                    <li>
+										<a href="components/buttons.html">
+											<span class="sub-item">Role User</span>
+										</a>
+									</li>
+                                    <li>
+										<a href="components/buttons.html">
+											<span class="sub-item">Aksi Disposisi</span>
 										</a>
 									</li>
 								</ul>
