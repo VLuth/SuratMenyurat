@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('perihal');
             $table->string('tujuan');
             $table->string('file');
-            $table->timestamps();
+            $table->date('created_at')->nullable();
+            $table->date('updated_at')->nullable();
         });
     }
 
