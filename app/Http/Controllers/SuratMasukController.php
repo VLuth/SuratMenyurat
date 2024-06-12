@@ -24,8 +24,8 @@ class SuratmasukController extends Controller
         return view ('tambahsuratmasuk');
     }
 
-    public function __construct(SuratMasuk $suratmasuk){
-        $this->suratmasuk = $suratmasuk;
+    public function __construct(){
+        $this->suratmasuk = new SuratMasuk;
     }
 
     /**
@@ -33,18 +33,15 @@ class SuratmasukController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request->file('file');
-        $filePath = $file->store('suratmasuk', 'public');
-
         $this->suratmasuk->nosurat = $request->nosurat;
         $this->suratmasuk->perihal = $request->perihal;
         $this->suratmasuk->tujuan = $request->tujuan;
-        $this->suratmasuk->file = $filePath;
+        $this->suratmasuk->file = $request->file;
 
         $rules = [
             'nosurat' => 'required',
             'perihal' => 'required',
-            'tujuan' => 'required',
+            'tujuan' => 'required'
         ];
 
         $message = [
@@ -53,7 +50,7 @@ class SuratmasukController extends Controller
 
         $this->suratmasuk->save();
 
-        return redirect()->route('suratmasuk')->with('successtambah', 'data surat masuk berhasil ditambahkan!');
+        return redirect()->route('suratmasuk')->with('successtambah', 'data buku berhasil ditambahkan!');
 
     }
 

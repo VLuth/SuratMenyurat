@@ -16,9 +16,10 @@ class SekretarisMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->usertype == 'sekretaris'){
-        return $next($request);
+        if(Auth::user()->usertype != 'sekretaris'){
+            return redirect('/');
         }
-        return redirect()->back();
+
+        return $next($request);
     }
 }

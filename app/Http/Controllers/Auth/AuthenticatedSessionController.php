@@ -28,11 +28,16 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (Auth::user()->usertype == 'sekretaris') {
-            return redirect(route('sekretaris.dashboard'));
+
+        if($request->user()->usertype === 'sekretaris'){
+            return redirect('sekretaris/dashboard');
+        } else if($request->user()->usertype === 'ketua'){
+            return redirect('ketua/dashboard');
+        } else if($request->user()->usertype === 'petugas'){
+            return redirect('petugas/dashboard');
         }
 
-        return redirect()->intended(route('dashboardstaff', absolute: false));
+        return redirect()->intended(route('dashboard'));
     }
 
     /**

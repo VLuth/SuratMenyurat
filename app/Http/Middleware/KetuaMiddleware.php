@@ -15,9 +15,10 @@ class KetuaMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->usertype == 'ketua'){
-        return $next($request);
+        if(Auth::user()->usertype != 'ketua'){
+            return redirect('/');
         }
-        return redirect()->back();
+
+        return $next($request);
     }
 }
