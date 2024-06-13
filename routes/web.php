@@ -10,17 +10,16 @@ use Illuminate\Support\Facades\Route;
 
 route::get('/dashboard', [StaffController::class, 'index'])->name('dashboard');
 Route::get('/suratmasuk', [StaffController::class, 'suratmasukstaff'])->name('suratmasuk');
-Route::get('/form/suratmasuk', [SuratmasukController::class, 'create'])->name('tambahsuratmasuk');
+Route::get('/formtambah/suratmasuk', [SuratmasukController::class, 'create'])->name('tambahsuratmasuk');
 route::post('/suratmasuk', [SuratmasukController::class, 'store'])->name('storesuratmasuk');
 route::get('/form/suratmasuk', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
 
-
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/main', function () {
+    return view('template.main');
 });
 
 // Route::get('/dashboard', function () {
