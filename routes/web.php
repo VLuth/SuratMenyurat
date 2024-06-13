@@ -19,12 +19,11 @@ route::post('/view/{id}', [SuratmasukController::class, 'viewfile'])->name('view
 route::get('/formedit/suratmasuk/{id}', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
 
-
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/main', function () {
+    return view('template.main');
 });
 
 // Route::get('/dashboard', function () {
