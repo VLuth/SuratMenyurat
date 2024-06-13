@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="{{asset('atlantis')}}/assets/css/demo.css">
 </head>
 <body data-background-color="dark">
-	<div class="wrapper">
+	
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="dark2">
@@ -49,14 +49,54 @@
 			</div>
 			<!-- End Logo Header -->
 
+
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">
+				<div class="container-fluid">
+					<div class="collapse" id="search-nav">
+						<form class="navbar-left navbar-form nav-search mr-md-3">
+							<div class="input-group">
+								<div class="input-group-prepend">
+								</div>	
+							</div>
+						</form>
+					</div>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="{{asset('atlantis')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="{{asset('atlantis')}}/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4>Syntax</h4>
+												<p class="text-muted">syntaxsoulder@gmail.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">My Profile</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">Logout</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</div>
 			</nav>
 			<!-- End Navbar -->
 		</div>
 
 		<!-- Sidebar -->
-		<div class="sidebar" data-background-color="dark2">
+		<div class="sidebar sidebar-style-2" data-background-color="dark2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<div class="user">
@@ -64,50 +104,29 @@
 							<img src="{{asset('atlantis')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<a data-toggle="collapse" href="#profile" aria-expanded="true"><a href="profile.html" class="">
 								<span>
-									Syntax
-									<span class="user-level">Staff</span>
-									<span class="caret"></span>
+								 Syntax
+									<span class="user-level">staff</span>
+									
+
+									</a>
 								</span>
 							</a>
 							<div class="clearfix"></div>
 
-							<div class="collapse in" id="collapseExample">
-								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
-									<li>
-										<a href="#logout">
-											<span class="link-collapse">Log Out</span>
-										</a>
-									</li>
-								</ul>
-							</div>
+				
 						</div>
 					</div>
 					<ul class="nav nav-primary">
-						<li class="nav-item ">
-							<a data-toggle="" href="{{route('dashboardstaff')}}" class="collapsed" aria-expanded="false">
+						<li class="nav-item active">
+						<a data-toggle="" href="{{route('dashboard')}}" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
 								</a>
-								
-							</a>
 							<div class="collapse" id="dashboard">
+								<ul class="nav nav-collapse">
+								</ul>
 							</div>
 						</li>
 						<li class="nav-section">
@@ -117,42 +136,16 @@
 							<h4 class="text-section">Components</h4>
 						</li>
 						<li class="nav-item">
-							<a data-toggle="collapse" href="#base">
-                                <i class="fa-solid fa-right-to-bracket"></i>	
+							<a data-toggle="collapse" href="#sidebarLayouts">
+								<i class="fas fa-th-list"></i>
 								<p>Surat Masuk</p>
 								<span class="caret"></span>
 							</a>
-							<div class="collapse" id="base">
+							<div class="collapse" id="sidebarLayouts">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="components/avatars.html">
+										<a href="{{route('suratmasuk')}}">
 											<span class="sub-item">Surat Masuk</span>
-										</a>
-									</li>
-									<li>
-										<a href="components/buttons.html">
-											<span class="sub-item">Draft</span>
-										</a>
-									</li>
-                                    <li>
-										<a href="components/buttons.html">
-											<span class="sub-item">Riwayat</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item submenu">
-							<a data-toggle="collapse" href="#sidebarLayouts">
-                                <i class="fa-solid fa-right-from-bracket"></i>
-								<p>Surat Keluar</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse show" id="sidebarLayouts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="sidebar-style-1.html">
-											<span class="sub-item">Surat Keluar</span>
 										</a>
 									</li>
 									<li>
@@ -160,8 +153,8 @@
 											<span class="sub-item">Draft</span>
 										</a>
 									</li>
-                                    <li>
-										<a href="{{route('dashboardstaff')}}">
+									<li>
+										<a href="compact-sidebar.html">
 											<span class="sub-item">Riwayat</span>
 										</a>
 									</li>
@@ -170,29 +163,56 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
-							<i class="fas fa-layer-group"></i>
-								<p>Master Data</p>
+								<i class="fas fa-pen-square"></i>
+								<p>Surat Keluar</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
+										<a href="sidebar-style-1.html">
+											<span class="sub-item">Surat Keluar</span>
+										</a>
+									</li>
+									<li>
 										<a href="forms/forms.html">
+											<span class="sub-item">Draft</span>
+										</a>
+									</li>
+									<li>
+										<a href="forms/forms.html">
+											<span class="sub-item">Riwayat</span>
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a data-toggle="collapse" href="#base">
+								<i class="fas fa-layer-group"></i>
+								<p>Master Data</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="base">
+								<ul class="nav nav-collapse">
+									<li>
+										<a href="components/avatars.html">
 											<span class="sub-item">User</span>
 										</a>
 									</li>
-                                    <li>
+									<li>
 										<a href="components/buttons.html">
 											<span class="sub-item">Bagian</span>
 										</a>
 									</li>
-                                    <li>
-										<a href="components/buttons.html">
+									<li>
+										<a href="components/gridsystem.html">
 											<span class="sub-item">Role User</span>
 										</a>
 									</li>
-                                    <li>
-										<a href="components/buttons.html">
+									<li>
+										<a href="components/panels.html">
 											<span class="sub-item">Aksi Disposisi</span>
 										</a>
 									</li>
@@ -204,101 +224,11 @@
 			</div>
 		</div>
 		<!-- End Sidebar -->
-
-		<div class="main-panel">
-			<div class="content">
-				<div class="page-inner">
-					<div class="mt-2 mb-4">
-						<h2 class="text-white pb-2"></h2>
-						<h5 class="text-white op-7 mb-4"></h5>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="card card-dark bg-primary-gradient">
-								<div class="card-body pb-0">
-									<div class="h1 fw-bold float-right">+5%</div>
-									<h2 class="mb-4">17</h2>
-									<p>Surat Masuk</p>
-									<div class="pull-in sparkline-fix chart-as-background">
-										<div id="lineChart"><canvas width="327" height="70" style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas></div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card card-dark bg-secondary-gradient">
-								<div class="card-body pb-0">
-									<div class="h1 fw-bold float-right">-3%</div>
-									<h2 class="mb-4">27</h2>
-									<p>Surat Keluar</p>
-									<div class="pull-in sparkline-fix chart-as-background">
-										<div id="lineChart2"><canvas width="327" height="70" style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-head-row">
-										<div class="card-title">Surat Statistik</div>
-										<div class="card-tools">
-											<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
-												<span class="btn-label">
-													<i class="fa fa-pencil"></i>
-												</span>
-												Export
-											</a>
-											<a href="#" class="btn btn-info btn-border btn-round btn-sm">
-												<span class="btn-label">
-													<i class="fa fa-print"></i>
-												</span>
-												Print
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container" style="min-height: 375px">
-										<canvas id="statisticsChart"></canvas>
-									</div>
-									<div id="myChartLegend"></div>
-								</div>
-							</div>
-						</div>
+			@yield('konten')
 					</div>
 				</div>
 			</div>
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Syntax Soulder
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						2024, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Syntax Soulder</a>
-					</div>				
-				</div>
-			</footer>
 		</div>
-		
 		<!-- Custom template | don't include it in your project! -->
 		<div class="custom-template">
 			<div class="title">Settings</div>

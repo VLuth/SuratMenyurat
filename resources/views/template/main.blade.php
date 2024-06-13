@@ -27,8 +27,9 @@
 	<link rel="stylesheet" href="{{asset('atlantis')}}/assets/css/demo.css">
 </head>
 <body data-background-color="dark">
-	
+	<div class="wrapper">
 		<div class="main-header">
+			
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="dark2">
 				
@@ -48,7 +49,6 @@
 				</div>
 			</div>
 			<!-- End Logo Header -->
-
 
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">
@@ -170,7 +170,7 @@
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="forms/forms.html">
+										<a href="sidebar-style-1.html">
 											<span class="sub-item">Surat Keluar</span>
 										</a>
 									</li>
@@ -225,7 +225,7 @@
 		</div>
 		<!-- End Sidebar -->
 			@yield('konten')
-					</div>
+			</div>
 				</div>
 			</div>
 		</div>
@@ -301,9 +301,6 @@
 		</div>
 		<!-- End Custom template -->
 	</div>
-
-	
-
 	<!--   Core JS Files   -->
 	<script src="{{asset('atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="{{asset('atlantis')}}/assets/js/core/popper.min.js"></script>
