@@ -3,7 +3,7 @@
 <head>
     <script src="https://kit.fontawesome.com/871ef6297c.js" crossorigin="anonymous"></script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Dashboard</title>
+	<title>Surat Menyurat</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{{asset('atlantis')}}/assets/img/icon.ico" type="image/x-icon"/>
 
@@ -119,7 +119,7 @@
 						</div>
 					</div>
 					<ul class="nav nav-primary">
-						<li class="nav-item active">
+						<li class="nav-item">
 						<a data-toggle="" href="{{route('dashboard')}}" class="collapsed" aria-expanded="false">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
@@ -137,7 +137,7 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#sidebarLayouts">
-								<i class="fas fa-th-list"></i>
+								<i class="fas fa-arrow-alt-circle-down"></i>
 								<p>Surat Masuk</p>
 								<span class="caret"></span>
 							</a>
@@ -163,7 +163,7 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#forms">
-								<i class="fas fa-pen-square"></i>
+								<i class="fas fa-arrow-alt-circle-up"></i>
 								<p>Surat Keluar</p>
 								<span class="caret"></span>
 							</a>

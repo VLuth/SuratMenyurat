@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Tables - Atlantis Lite Bootstrap 4 Admin Dashboard</title>
+	<title>Surat Masuk</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{{asset('Atlantis')}}/assets/img/icon.ico" type="image/x-icon"/>
 	
@@ -81,16 +81,6 @@
                             <th style="width: 10%">Aksi</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Tanggal</th>
-                            <th>No Surat</th>
-                            <th>Perihal</th>
-                            <th>Tujuan</th>
-                            <th>Action</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php
                             $number = 1;                           
