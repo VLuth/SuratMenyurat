@@ -105,10 +105,10 @@
                             <td>{{$item->pengirim}}</td>
                             <td>
                                 <div class="form-button-action">
-                                    <a href="#" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#detailsuratmasuk_{{$item->id}}" data-original-title="Detail" data-id="{{$item->id}}">
+                                    <a data-id="{{$item->id}}" href="#" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#detailsuratmasuk" data-original-title="Detail">
                                         <i class="fa fa-info-circle fa-lg"></i>
                                     </a>
-                                    <div class="modal fade" id="detailsuratmasuk_{{$item->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal fade" id="detailsuratmasuk" tabindex="-1" role="dialog" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
 												<div class="modal-header no-bd">
@@ -123,48 +123,28 @@
 												<div class="modal-body">
 													<p class="small">Create a new row using this form, make sure you fill them all</p>
                                                     <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Tanggal Surat</label>
-                                                                <label >{{$item->created_at->format('d/m/Y')}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Terakhir Diubah</label>
-                                                                <label >{{$item->updated_at->format('d/m/Y')}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-sm-12">
                                                             <div class="form-group form-group-default">
                                                                 <label>No Surat</label>
-                                                                <label>{{$item->nosurat}}</label>
+                                                                <label id="detailNoSurat"></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 pr-0">
+                                                            <div class="form-group form-group-default">
+                                                                <label>Pengirim</label>
+                                                                <label id="detailPengirim"></label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group form-group-default">
                                                                 <label>Perihal</label>
-                                                                <label >{{$item->perihal}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Pengirim</label>
-                                                                <label >{{$item->pengirim}}</label>
+                                                                <label id="detailPerihal"></label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group form-group-default">
                                                                 <label>Tujuan</label>
-                                                                <label >{{$item->tujuan}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group form-group-default">
-                                                                <label class="text-center">File</label>
-                                                                <label class="text-center"><a href="{{route('view', $item->id)}}">View File</a></label>
-                                                                <label class="text-center"><a href="{{route('download', $item->file)}}">Download File</a></label>
-                                                                <iframe src="storage/{{$item->file}}"></iframe>
+                                                                <label id="detailTujuan"></label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -221,7 +201,6 @@
 </div>
 <!--   Core JS Files   -->
 <script>
-<script>
 $('.detail-btn').click(function(e) {
     e.preventDefault();
     var id = $(this).data('id');
@@ -245,7 +224,6 @@ $('.detail-btn').click(function(e) {
         }
     });
 });
-</script>
 </script>
 <script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"></script>

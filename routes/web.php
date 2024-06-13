@@ -8,11 +8,15 @@ use App\Http\Controllers\Ketua\KetuaController;
 use App\Http\Controllers\Petugas\PetugasController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/suratmasuk/{id}', 'SuratMasukController@show')->name('tampilkansuratmasuk');
+
 route::get('/dashboard', [StaffController::class, 'index'])->name('dashboard');
 Route::get('/suratmasuk', [StaffController::class, 'suratmasukstaff'])->name('suratmasuk');
-Route::get('/form/suratmasuk', [SuratmasukController::class, 'create'])->name('tambahsuratmasuk');
+Route::get('/formtambah/suratmasuk', [SuratmasukController::class, 'create'])->name('tambahsuratmasuk');
 route::post('/suratmasuk', [SuratmasukController::class, 'store'])->name('storesuratmasuk');
-route::get('/form/suratmasuk', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
+route::post('/download/{file}', [SuratmasukController::class, 'downloadfile'])->name('download');
+route::post('/view/{id}', [SuratmasukController::class, 'viewfile'])->name('view');
+route::get('/formedit/suratmasuk/{id}', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
 
 

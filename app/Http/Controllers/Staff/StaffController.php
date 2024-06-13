@@ -16,8 +16,7 @@ class StaffController extends Controller
 
     public function suratmasukstaff(){
         $query = SuratMasuk::all();
-        $pengirim = Auth::user()->name;
-        return view ('suratmasuk', compact('query', 'pengirim'));
+        return view ('suratmasuk', compact('query'));
     }
     public function suratkeluarstaff(){
         return view('suratkeluar');

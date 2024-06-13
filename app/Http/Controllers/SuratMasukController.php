@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\storage;
 use App\Models\suratmasuk;
 
 class SuratmasukController extends Controller
@@ -14,8 +14,7 @@ class SuratmasukController extends Controller
     public function index()
     {
         $query = SuratMasuk::all();
-        $pengirim = Auth::user()->name;
-        return view ('suratmasuk', compact('query', 'pengirim'));
+        return view ('suratmasuk', compact('query', 'edit'));
     }
 
     /**
@@ -35,11 +34,19 @@ class SuratmasukController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('file')){
+        $file = $request->file('file');
+        $text = $file->getClientOriginalExtension();
+        $filename = time() .".". $text;
+        $filepath = $file->storeAs('public', $filename);
+        $this->suratmasuk->file = $filename;
+        }
+
         $this->suratmasuk->nosurat = $request->nosurat;
         $this->suratmasuk->perihal = $request->perihal;
         $this->suratmasuk->tujuan = $request->tujuan;
         $this->suratmasuk->pengirim = $request->pengirim;
-        $this->suratmasuk->file = $request->file;
+        
 
         $rules = [
             'nosurat' => 'required',
@@ -60,9 +67,20 @@ class SuratmasukController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $edit = SuratMasuk::findOrFail($id);
+        return response()->json($edit);
+    }
+
+    public function downloadfile($request, $file)
+    {
+        return response()->download(public_path('storage/app/public/suratmasuk' .$file));
+    }
+
+    public function viewfile($id)
+    {
+        return response()->download(public_path('storage/app/public/suratmasuk' .$file));
     }
 
     /**
@@ -71,8 +89,9 @@ class SuratmasukController extends Controller
     public function edit($id)
     {
         $edit = suratmasuk::findOrFail($id);
-        return view ('suratmasuk', compact('edit'));
+        return view ('viewfile', compact('edit'));
     }
+
 
     /**
      * Update the specified resource in storage.

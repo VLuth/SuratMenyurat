@@ -29,7 +29,7 @@
 	<link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/demo.css">
 </head>
 <body data-background-color="dark">
-	<div class="wrapper">
+	
 				</div>	
 					<div class="row">
 						<div class="col-md-10">
@@ -61,7 +61,6 @@
 								</div>
 							</div>
 						</div>
-	</div>
 	<!--   Core JS Files   -->
 	<script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"></script>
