@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nosurat');
             $table->string('perihal');
             $table->string('tujuan');
+            $table->string('pengirim');
             $table->string('file');
             $table->date('created_at')->nullable();
             $table->date('updated_at')->nullable();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\suratmasuk;
 
 class SuratmasukController extends Controller
@@ -13,7 +14,8 @@ class SuratmasukController extends Controller
     public function index()
     {
         $query = SuratMasuk::all();
-        return view ('suratmasuk', compact('query'));
+        $pengirim = Auth::user()->name;
+        return view ('suratmasuk', compact('query', 'pengirim'));
     }
 
     /**
@@ -36,6 +38,7 @@ class SuratmasukController extends Controller
         $this->suratmasuk->nosurat = $request->nosurat;
         $this->suratmasuk->perihal = $request->perihal;
         $this->suratmasuk->tujuan = $request->tujuan;
+        $this->suratmasuk->pengirim = $request->pengirim;
         $this->suratmasuk->file = $request->file;
 
         $rules = [
@@ -65,9 +68,10 @@ class SuratmasukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $edit = suratmasuk::findOrFail($id);
+        return view ('suratmasuk', compact('edit'));
     }
 
     /**
@@ -81,8 +85,10 @@ class SuratmasukController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $hapus = suratmasuk::findOrFail($id);
+        $hapus->delete();
+        return redirect()->route('suratmasuk')->with('successdestroy', 'data dihapus');
     }
 }

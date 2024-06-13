@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Staff;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\SuratMasuk;
 use App\Models\SuratKeluar;
 
@@ -13,11 +14,12 @@ class StaffController extends Controller
         return view('dashboardstaff');
     }
 
-    public function indexsuratmasuk(){
+    public function suratmasukstaff(){
         $query = SuratMasuk::all();
-        return view ('suratmasuk', compact('query'));
+        $pengirim = Auth::user()->name;
+        return view ('suratmasuk', compact('query', 'pengirim'));
     }
-    public function indexsuratkeluar(){
+    public function suratkeluarstaff(){
         return view('suratkeluar');
     }
 }

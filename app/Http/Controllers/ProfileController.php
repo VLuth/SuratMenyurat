@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\SekretarisController;
-use App\Http\Controllers\KetuaController;
-use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\Sekretaris\SekretarisController;
+use App\Http\Controllers\Ketua\KetuaController;
+use App\Http\Controllers\Petugas\PetugasController;
 
 class ProfileController extends Controller
 {
@@ -63,7 +63,3 @@ class ProfileController extends Controller
     }
 }
 
-route::get('sekretaris/dashboard', [SekretarisController::class, 'index']);
-route::get('dashboard', [StaffController::class, 'index']);
-route::get('ketua/dashboard', [KetuaController::class, 'index']);
-route::get('petugas/dashboard', [PetugasController::class, 'index']);

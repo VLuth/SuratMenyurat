@@ -11,6 +11,10 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function suratmasuk(){
+        return $this->hasMany(suratmasuk::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

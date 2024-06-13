@@ -1,5 +1,5 @@
-@extends('template.mainstaff')
-@section('kontenstaff')
+@extends('template.main')
+@section('konten')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,17 +86,29 @@
                                                     <input type="text" class="form-control form-control" name="perihal" id="defaultInput" placeholder="Perihal">
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlFile1">Example file input</label>
-                                                <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+                                            <div class="col-md-6 col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="largeInput">Pengirim</label>
+                                                    <input type="text" class="form-control form-control" name="pengirim" id="defaultInput" placeholder="Pengirim">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-action">
-                                        <button type="submit" class="btn btn-success">Tambah</button>
-                                        <a class="btn btn-warning">Draft</a>
-                                        <a class="btn btn-danger">Batal</a>
-                                    </div>
+									<div class="card-body">
+                                        <div class="row">
+											<div class="col-md-6 col-lg-6">
+												<div class="form-group">
+													<label for="exampleFormControlFile1">Example file input</label>
+													<input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+												</div>
+												<div class="card-action">
+													<button type="submit" class="btn btn-success">Tambah</button>
+													<a class="btn btn-warning">Draft</a>
+													<a class="btn btn-danger">Batal</a>
+												</div>
+											</div>
+										</div>
+									</div>
                                 </form>
 							</div>
 						</div>
