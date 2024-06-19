@@ -96,21 +96,28 @@ class SuratmasukController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        $file = $request->file('file');
-        $text = $file->getClientOriginalExtension();
-        $filename = time() .".". $text;
-        $filepath = $file->storeAs('public', $filename);
-        $this->suratmasuk->file = $filename;
+        $update = suratmasuk::findOrFail($id);
 
-        $this->suratmasuk->nosurat = $request->nosurat;
-        $this->suratmasuk->perihal = $request->perihal;
-        $this->suratmasuk->tujuan = $request->tujuan;
-        $this->suratmasuk->pengirim = $request->pengirim;
+        if ($request->hasFile('file')){
+            $file = $request->file('file');
+            $text = $file->getClientOriginalExtension();
+            $filename = time() .".". $text;
+            $filepath = $file->storeAs('public', $filename);
+            $update->file = $filename;
+        }
 
-        $this->suratmasuk->save();
+        $update->nosurat = $request->nosurat;
+        $update->perihal = $request->perihal;
+        $update->tujuan = $request->tujuan;
+        $update->pengirim = $request->pengirim;
+
+        $update->save();
+
+        return redirect()->route('suratmasuk');
     }
+
 
     /**
      * Remove the specified resource from storage.

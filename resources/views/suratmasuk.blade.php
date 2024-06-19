@@ -150,7 +150,9 @@
                     </div>
 
                     <div class="edit-form" style="display: none">
-                        <form>
+                    <form method="post" action="{{route('updatesuratmasuk', $item->id)}}">
+                            @method('put')
+                            @csrf    
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
