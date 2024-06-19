@@ -33,7 +33,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="dark2">
 				
-				<a href="#" class="logo">
+				<a class="logo">
 					<img src="{{asset('atlantis')}}/assets/img/icon2.ico" alt="navbar brand" class="navbar-brand w-50 h-auto ">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						
 						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" aria-expanded="false">
 								<div class="avatar-sm">
 									<img src="{{asset('atlantis')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
@@ -76,15 +76,14 @@
 											<div class="avatar-lg"><img src="{{asset('atlantis')}}/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 												<h4>Syntax</h4>
-												<p class="text-muted">syntaxsoulder@gmail.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+												<p class="text-muted">syntaxsoulder@gmail.com</p>
 											</div>
 										</div>
 									</li>
 									<li>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">My Profile</a>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
+										<a class="dropdown-item" href="logout.html">Logout</a>
 									</li>
 								</div>
 							</ul>
@@ -104,7 +103,7 @@
 							<img src="{{asset('atlantis')}}/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
-							<a data-toggle="collapse" href="#profile" aria-expanded="true"><a href="profile.html" class="">
+							<a data-toggle="collapse" aria-expanded="true"><a class="">
 								<span>
 								 Syntax
 									<span class="user-level">staff</span>
