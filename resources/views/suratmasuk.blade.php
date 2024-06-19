@@ -182,8 +182,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="exampleFormControlFile1">Upload File</label>
-                                    <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1" value="{{$item->file}}">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <label for="exampleFormControlFile1">Upload File</label>
+                                        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
+                                    </div>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-info edit-form" style="display: none">Simpan</button>
