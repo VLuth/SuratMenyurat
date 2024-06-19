@@ -419,7 +419,7 @@
 
 		<div class="main-panel">
 			<div class="content">
-			
+                @yield('konten')
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
