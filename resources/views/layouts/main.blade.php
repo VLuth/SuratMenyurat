@@ -221,12 +221,38 @@
 			</div>
 		</div>
 		<!-- End Sidebar -->
-			@yield('konten')
-
-			</div>
-				</div>
-			</div>
-		</div>
+			
+            <div class="main-panel">
+                <div class="content">
+                    @yield('konten')
+                </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <nav class="pull-left">
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.themekita.com">
+                                        ThemeKita
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Help
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Licenses
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="copyright ml-auto">
+                            2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+                        </div>				
+                    </div>
+                </footer>
+            </div>
 		
 		<!-- Custom template | don't include it in your project! -->
 		<div class="custom-template">
@@ -322,8 +348,8 @@
 	<!-- Datatables -->
 	<script src="{{asset('atlantis')}}/assets/js/plugin/datatables/datatables.min.js"></script>
 
-	<!-- Bootstrap Notify -->
-	<script src="{{asset('atlantis')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	{{-- <!-- Bootstrap Notify -->
+	<script src="{{asset('atlantis')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> --}}
 
 	<!-- jQuery Vector Maps -->
 	<script src="{{asset('atlantis')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
