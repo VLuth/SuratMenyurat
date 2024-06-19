@@ -118,6 +118,7 @@ class SuratmasukController extends Controller
         return redirect()->route('suratmasuk');
     }
 
+
     /**
      * Remove the specified resource from storage.
      */
