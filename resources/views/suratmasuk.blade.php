@@ -109,43 +109,49 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <label>Tanggal Surat</label>
+                                    <b>Tanggal Surat</b>
                                     <label>{{ $item->created_at->format('d/m/Y') }}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <label>Terakhir Diubah</label>
+                                    <b>Terakhir Diubah</b>
                                     <label>{{ $item->updated_at->format('d/m/Y') }}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <label>No Surat</label>
+                                    <b>No Surat</b>
                                     <label>{{ $item->nosurat }}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <label>Perihal</label>
+                                    <b>Perihal</b>
                                     <label>{{ $item->perihal }}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <label>Pengirim</label>
+                                    <b>Pengirim</b>
                                     <label>{{ $item->pengirim }}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <label>Tujuan</label>
+                                    <b>Tujuan</b>
                                     <label>{{ $item->tujuan }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="margin-left: 125px">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <b class="text-center">Status</b>
+                                    <label class="text-center">{{ $item->status }}</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <label class="text-center">File</label>
+                                    <b class="text-center">File</b>
                                     <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
                                     <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
                                     <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
