@@ -98,7 +98,18 @@ class SuratmasukController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $file = $request->file('file');
+        $text = $file->getClientOriginalExtension();
+        $filename = time() .".". $text;
+        $filepath = $file->storeAs('public', $filename);
+        $this->suratmasuk->file = $filename;
+
+        $this->suratmasuk->nosurat = $request->nosurat;
+        $this->suratmasuk->perihal = $request->perihal;
+        $this->suratmasuk->tujuan = $request->tujuan;
+        $this->suratmasuk->pengirim = $request->pengirim;
+
+        $this->suratmasuk->save();
     }
 
     /**

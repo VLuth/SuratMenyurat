@@ -5,32 +5,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Surat Masuk</title>
-	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{asset('Atlantis')}}/assets/img/icon.ico" type="image/x-icon"/>
-	
-	<!-- Fonts and icons -->
-	<script src="{{asset('Atlantis')}}/assets/js/plugin/webfont/webfont.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{asset('Atlantis')}}/assets/css/fonts.min.css']},
-			active: function() {
-				sessionStorage.fonts = true;
-			}
-		});
-	</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Surat Masuk</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="icon" href="{{asset('Atlantis')}}/assets/img/icon.ico" type="image/x-icon"/>
+    
+    <!-- Fonts and icons -->
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: {"families":["Lato:300,400,700,900"]},
+            custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['{{asset('Atlantis')}}/assets/css/fonts.min.css']},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
 
-	<!-- CSS Files -->
-	<link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/atlantis.min.css">
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/demo.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/atlantis.min.css">
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="{{asset('Atlantis')}}/assets/css/demo.css">
 </head>
-<body data-background-color="dark">
-
-
+<body data-background-color="dark">  
     <div class="main-panel">
         <div class="content">
             <div class="page-inner">
@@ -56,224 +54,203 @@
                         </li>
                     </ul>
                 </div>
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-header">
-            <div class="d-flex align-items-center">
-                <h4 class="card-title">Surat Masuk</h4>
-                <a class="btn btn-primary btn-round ml-auto" href="{{route('tambahsuratmasuk')}}">
-                    <i class="fa fa-plus"></i>
-                    Add Row
-                </a>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="add-row" class="display table table-striped table-hover" >
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Tanggal</th>
-                            <th>No Surat</th>
-                            <th>Perihal</th>
-                            <th>Tujuan</th>
-                            <th>Pengirim</th>
-                            <th style="width: 10%">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                            $number = 1;                           
-                        @endphp
-                        @foreach ($query as $item)
-                        <tr>
-                            <td>{{$number}}</td>
-                            <td>{{$item->created_at->format('d/m/Y')}}</td>
-                            <td>{{$item->nosurat}}</td>
-                            <td>{{$item->perihal}}</td>
-                            <td>{{$item->tujuan}}</td>
-                            <td>{{$item->pengirim}}</td>
-                            <td>
-                                <div class="form-button-action">
-                                    <a href="#" class="btn btn-link btn-primary btn-lg" data-toggle="modal" data-target="#detailsuratmasuk_{{$item->id}}" data-original-title="Detail" data-id="{{$item->id}}">
-                                        <i class="fa fa-info-circle fa-lg"></i>
-                                    </a>
-                                    <div class="modal fade" id="detailsuratmasuk_{{$item->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-										<div class="modal-dialog" role="document">
-											<div class="modal-content">
-												<div class="modal-header no-bd">
-													<h5 class="modal-title">
-														<span class="fw-mediumbold">
-														Detail Data</span> 
-													</h5>
-													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-														<span aria-hidden="true">&times;</span>
-													</button>
-												</div>
-												<div class="modal-body">
-													<p class="small">Create a new row using this form, make sure you fill them all</p>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Tanggal Surat</label>
-                                                                <label >{{$item->created_at->format('d/m/Y')}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Terakhir Diubah</label>
-                                                                <label >{{$item->updated_at->format('d/m/Y')}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>No Surat</label>
-                                                                <label>{{$item->nosurat}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Perihal</label>
-                                                                <label >{{$item->perihal}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Pengirim</label>
-                                                                <label >{{$item->pengirim}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group form-group-default">
-                                                                <label>Tujuan</label>
-                                                                <label >{{$item->tujuan}}</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group form-group-default">
-                                                                <label class="text-center">File</label>
-                                                                <label class="text-center"><a href="{{route('view', $item->id)}}">View File</a></label>
-                                                                <label class="text-center"><a href="{{route('download', $item->file)}}">Download File</a></label>
-                                                                <iframe src="storage/{{$item->file}}"></iframe>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center">
+                                <h4 class="card-title">Surat Masuk</h4>
+                                <a class="btn btn-primary btn-round ml-auto" href="{{ route('tambahsuratmasuk') }}">
+                                    <i class="fa fa-plus"></i>
+                                    Tambah Data
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="add-row" class="display table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Tanggal</th>
+                                            <th>No Surat</th>
+                                            <th>Perihal</th>
+                                            <th>Tujuan</th>
+                                            <th>Pengirim</th>
+                                            <th style="width: 10%">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php
+                                            $number = 1;                           
+                                        @endphp
+                                        @foreach ($query as $item)
+                                        <tr>
+                                            <td>{{ $number }}</td>
+                                            <td>{{ $item->created_at->format('d/m/Y') }}</td>
+                                            <td>{{ $item->nosurat }}</td>
+                                            <td>{{ $item->perihal }}</td>
+                                            <td>{{ $item->tujuan }}</td>
+                                            <td>{{ $item->pengirim }}</td>
+                                            <td>
+                                                <div class="form-button-action">
+                                                    <a href="#" class="btn btn-link btn-primary btn-lg toggle-edit" data-toggle="modal" data-target="#detailsuratmasuk_{{ $item->id }}" data-original-title="Detail" data-id="{{ $item->id }}">
+                                                        <i class="fa fa-info-circle fa-lg"></i>
+                                                    </a>
+                                                    <a href="{{ route('hapussuratmasuk', $item->id) }}" class="btn btn-link btn-danger" onclick="return confirm('Yakin?')" data-original-title="Hapus">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @php
+                                            $number++;
+                                        @endphp
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-													{{-- <form>
-														<div class="row">
-															<div class="col-sm-12">
-																<div class="form-group form-group-default">
-																	<label>Name</label>
-																	<input id="addName" type="text" class="form-control" placeholder="fill name">
-																</div>
-															</div>
-															<div class="col-md-6 pr-0">
-																<div class="form-group form-group-default">
-																	<label>Position</label>
-																	<input id="addPosition" type="text" class="form-control" placeholder="fill position">
-																</div>
-															</div>
-															<div class="col-md-6">
-																<div class="form-group form-group-default">
-																	<label>Office</label>
-																	<input id="addOffice" type="text" class="form-control" placeholder="fill office">
-																</div>
-															</div>
-														</div>
-													</form> --}}
-												</div>
-												<div class="modal-footer no-bd">
-													<button type="button" id="addRowButton" href={{route('editsuratmasuk', $item->id)}} class="btn btn-primary">Edit</button>
-													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-												</div>
-											</div>
-										</div>
-									</div>
-                                    <a data-toggle="tooltip" title="" class="btn btn-link btn-danger" href="{{route('hapussuratmasuk', $item->id)}}" onclick="return confirm('Yakin?')" data-original-title="Hapus">
-                                        <i class="fa fa-trash"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        @php
-                            $number++
-                        @endphp
-                        @endforeach
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
-</div>
 
+    @foreach ($query as $item)
+    <div class="modal fade" id="detailsuratmasuk_{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: ">
+                <div class="modal-header no-bd">
+                    <h5 class="modal-title">
+                        <span class="fw-mediumbold">Detail Data</span> 
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="detail-view">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <label>Tanggal Surat</label>
+                                    <label>{{ $item->created_at->format('d/m/Y') }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <label>Terakhir Diubah</label>
+                                    <label>{{ $item->updated_at->format('d/m/Y') }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <label>No Surat</label>
+                                    <label>{{ $item->nosurat }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <label>Perihal</label>
+                                    <label>{{ $item->perihal }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <label>Pengirim</label>
+                                    <label>{{ $item->pengirim }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <label>Tujuan</label>
+                                    <label>{{ $item->tujuan }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <label class="text-center">File</label>
+                                    <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
+                                    <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
+                                    <iframe src="storage/{{ $item->file }}"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-</div>
-<!--   Core JS Files   -->
-<script>
-<script>
-$('.detail-btn').click(function(e) {
-    e.preventDefault();
-    var id = $(this).data('id');
+                    <div class="edit-form" style="display: none">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <label>No Surat</label>
+                                        <input name="nosurat" type="text" class="form-control" value="{{ $item->nosurat }}" style="background-color: #bdbdbd">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <label>Perihal</label>
+                                        <input name="perihal" type="text" class="form-control" value="{{ $item->perihal }}" style="background-color: #bdbdbd">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <label>Pengirim</label>
+                                        <input name="pengirim" type="text" class="form-control" value="{{ $item->pengirim }}" style="background-color: #bdbdbd">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <label>Tujuan</label>
+                                        <input name="tujuan" type="text" class="form-control" value="{{ $item->tujuan }}" style="background-color: #bdbdbd">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer no-bd">
+                    <a class="btn btn-info edit-form" href="{{route('updatesuratmasuk')}}" style="display: none">Simpan</a>
+                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit detail-view">Edit</button>
+                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit edit-form" style="display: none">Detail</button>
+                    <button type="button" class="btn btn-danger detail-view" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
 
-    // Make an AJAX request to fetch details
-    $.ajax({
-        url: '/suratmasuk/' + id,
-        method: 'GET',
-        success: function(response) {
-            // Populate modal with fetched data
-            $('#detailNoSurat').text(response.nosurat);
-            $('#detailPerihal').text(response.perihal);
-            $('#detailTujuan').text(response.tujuan);
-            $('#detailPengirim').text(response.pengirim);
-            // Show the modal
-            $('#detailsuratmasuk').modal('show');
-        },
-        error: function(xhr, status, error) {
-            console.error(error);
-            // Handle error
-        }
-    });
-});
-</script>
-</script>
-<script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"></script>
-<script src="{{asset('Atlantis')}}/assets/js/core/bootstrap.min.js"></script>
-<!-- jQuery UI -->
-<script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <!-- Core JS Files -->
+    <script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
+    <script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"></script>
+    <script src="{{asset('Atlantis')}}/assets/js/core/bootstrap.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
-<!-- jQuery Scrollbar -->
-<script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<!-- Datatables -->
-<script src="{{asset('Atlantis')}}/assets/js/plugin/datatables/datatables.min.js"></script>
-<!-- Atlantis JS -->
-<script src="{{asset('Atlantis')}}/assets/js/atlantis.min.js"></script>
-<!-- Atlantis DEMO methods, don't include it in your project! -->
-<script src="{{asset('Atlantis')}}/assets/js/setting-demo2.js"></script>
-<script >
+    <!-- jQuery Scrollbar -->
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Datatables -->
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/datatables/datatables.min.js"></script>
+    <!-- Atlantis JS -->
+    <script src="{{asset('Atlantis')}}/assets/js/atlantis.min.js"></script>
 
-$(document).ready(function() {
-// Add Row
-			$('#add-row').DataTable({
-				"pageLength": 5,
-			});
+    <script>
+        $(document).ready(function() {
+            $('.toggle-edit').click(function() {
+                var modalId = $(this).attr('id').split('_')[1];
+                $('#detailsuratmasuk_' + modalId + ' .detail-view').toggle();
+                $('#detailsuratmasuk_' + modalId + ' .edit-form').toggle();
+            });
 
-			var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-			$('#addRowButton').click(function() {
-				$('#add-row').dataTable().fnAddData([
-					$("#addName").val(),
-					$("#addPosition").val(),
-					$("#addOffice").val(),
-					action
-					]);
-				$('#addRowModal').modal('hide');
-
-			});
-		});
-	</script>
+            // Initialize DataTable
+            $('#add-row').DataTable({
+                "pageLength": 5,
+            });
+        });
+    </script>
 </body>
 </html>
 @endsection
