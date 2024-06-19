@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('konten')
 
+
+
             <div class="page-inner">
                 <div class="page-header">
                     <h4 class="page-title">Index Surat Masuk</h4>
@@ -85,6 +87,7 @@
                 </div>
 
             </div>
+    
 
 
     @foreach ($query as $item)
@@ -150,7 +153,9 @@
                     </div>
 
                     <div class="edit-form" style="display: none">
-                        <form>
+                        <form method="post" action="{{route('updatesuratmasuk', $item->id)}}">
+                            @method('put')
+                            @csrf
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
@@ -176,12 +181,19 @@
                                         <input name="tujuan" type="text" class="form-control" value="{{ $item->tujuan }}" style="background-color: #bdbdbd">
                                     </div>
                                 </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <label for="exampleFormControlFile1">Upload File</label>
+                                        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
+                                    </div>
+                                </div>
                             </div>
+                            <button type="submit" class="btn btn-info edit-form" style="display: none">Simpan</button>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer no-bd">
-                    <a class="btn btn-info edit-form" href="{{route('updatesuratmasuk')}}" style="display: none">Simpan</a>
                     <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit detail-view">Edit</button>
                     <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit edit-form" style="display: none">Detail</button>
                     <button type="button" class="btn btn-danger detail-view" data-dismiss="modal">Tutup</button>
@@ -190,6 +202,21 @@
         </div>
     </div>
     @endforeach
+
+    <!-- Core JS Files -->
+    <script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
+    <script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"></script>
+    <script src="{{asset('Atlantis')}}/assets/js/core/bootstrap.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Datatables -->
+    <script src="{{asset('Atlantis')}}/assets/js/plugin/datatables/datatables.min.js"></script>
+    <!-- Atlantis JS -->
+    <script src="{{asset('Atlantis')}}/assets/js/atlantis.min.js"></script>
 
     <script>
         $(document).ready(function() {

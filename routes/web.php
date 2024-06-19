@@ -16,6 +16,7 @@ Route::get('/formtambah/suratmasuk', [SuratmasukController::class, 'create'])->n
 route::post('/suratmasuk', [SuratmasukController::class, 'store'])->name('storesuratmasuk');
 route::post('/download/{file}', [SuratmasukController::class, 'downloadfile'])->name('download');
 route::post('/view/{id}', [SuratmasukController::class, 'viewfile'])->name('view');
+route::put('/prosesupdate/{id}', [SuratmasukController::class, 'update'])->name('updatesuratmasuk');
 route::get('/formedit/suratmasuk/{id}', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
 
@@ -23,7 +24,7 @@ route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('
 
 
 Route::get('/main', function () {
-    return view('template.main');
+    return view('layouts.main');
 });
 
 // Route::get('/dashboard', function () {
