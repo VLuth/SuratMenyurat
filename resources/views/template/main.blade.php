@@ -223,7 +223,6 @@
 			</div>
 		</div>
 		<!-- End Sidebar -->
-			@yield('konten')
 			</div>
 				</div>
 			</div>

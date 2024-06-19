@@ -49,6 +49,7 @@
                                             <th>Perihal</th>
                                             <th>Tujuan</th>
                                             <th>Pengirim</th>
+                                            <th>Status</th>
                                             <th style="width: 10%">Aksi</th>
                                         </tr>
                                     </thead>
@@ -64,6 +65,7 @@
                                             <td>{{ $item->perihal }}</td>
                                             <td>{{ $item->tujuan }}</td>
                                             <td>{{ $item->pengirim }}</td>
+                                            <td>{{ $item->status }}</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="#" class="btn btn-link btn-primary btn-lg toggle-edit" data-toggle="modal" data-target="#detailsuratmasuk_{{ $item->id }}" data-original-title="Detail" data-id="{{ $item->id }}">
@@ -146,7 +148,7 @@
                                     <label class="text-center">File</label>
                                     <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
                                     <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
-                                    <iframe src="storage/{{ $item->file }}"></iframe>
+                                    <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -183,19 +185,21 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label for="exampleFormControlFile1">Upload File</label>
-                                        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <label class="text-center" for="exampleFormControlFile1">File</label>
+                                        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1" style="margin-left: 125px">
                                         <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-info edit-form" style="display: none">Simpan</button>
+                            <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
+                                <button type="submit" class="btn btn-info edit-form" style="display: none; margin-right: 10px">Simpan</button>
+                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit edit-form" style="display: none; margin-right: -15px">Detail</button>
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer no-bd">
                     <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit detail-view">Edit</button>
-                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit edit-form" style="display: none">Detail</button>
                     <button type="button" class="btn btn-danger detail-view" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
