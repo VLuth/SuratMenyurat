@@ -543,15 +543,15 @@
 	<!-- Datatables -->
 	<script src="{{asset('atlantis')}}/assets/js/plugin/datatables/datatables.min.js"></script>
 
-	{{-- <!-- Bootstrap Notify -->
-	<script src="{{asset('atlantis')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	<!-- Bootstrap Notify -->
+	{{-- <script src="{{asset('atlantis')}}/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> --}}
 
 	<!-- jQuery Vector Maps -->
 	<script src="{{asset('atlantis')}}/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="{{asset('atlantis')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script> --}}
+	<script src="{{asset('atlantis')}}/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
-	{{-- <!-- Sweet Alert -->
-	<script src="{{asset('atlantis')}}/assets/js/plugin/sweetalert/sweetalert.min.js"></script> --}}
+	<!-- Sweet Alert -->
+	<script src="{{asset('atlantis')}}/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 	<!-- Atlantis JS -->
 	<script src="{{asset('atlantis')}}/assets/js/atlantis.min.js"></script>
