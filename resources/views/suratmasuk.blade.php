@@ -27,11 +27,30 @@
                     </ul>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-16">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Surat Masuk</h4>
+                                <form class="row" method="GET" action="{{route('filter')}}" style="display:flex; max-width: 1000px">
+                                    <div style="width: 200px; margin-left:10px">
+                                        <label> Perihal </label>
+                                        <input type="text" name="filterperihal" class="form-control">
+                                    </div>
+                                    <div style="width: 200px; margin-left:10px">
+                                        <label> Tanggal Awal </label>
+                                        <input type="date" name="tanggalawal" class="form-control">
+                                    </div>
+                                    <div style="width: 200px; margin-left:10px">
+                                        <label> Tanggal Akhir </label>
+                                        <input type="date" name="tanggalakhir" class="form-control">
+                                    </div>
+                                    <div class="col-sm" style="align-items: center">
+                                        <button type="submit" class="btn btn-success btn-sm"> Cari </button>
+                                    </div>
+                                    <div class="col-sm" style="align-items:center">
+                                        <button href="{{route('suratmasuk')}}" class="btn btn-danger btn-sm"> reset </button>
+                                    </div>
+                                </form>
                                 <a class="btn btn-primary btn-round ml-auto" href="{{ route('tambahsuratmasuk') }}">
                                     <i class="fa fa-plus"></i>
                                     Tambah Data
@@ -40,7 +59,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="add-row" class="display table table-striped table-hover">
+                                <table class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -215,45 +234,14 @@
 
     <script>
         $(document).ready(function() {
-
-			$('#multi-filter-select').DataTable( {
-				"pageLength": 5,
-				initComplete: function () {
-					this.api().columns().every( function () {
-						var column = this;
-						var select = $('<select class="form-control"><option value=""></option></select>')
-						.appendTo( $(column.footer()).empty() )
-						.on( 'change', function () {
-							var val = $.fn.dataTable.util.escapeRegex(
-								$(this).val()
-								);
-
-							column
-							.search( val ? '^'+val+'$' : '', true, false )
-							.draw();
-						} );
-
-						column.data().unique().sort().each( function ( d, j ) {
-							select.append( '<option value="'+d+'">'+d+'</option>' )
-						} );
-					} );
-				}
-			});
-		});
-    </script>
-
-    <script>
-        $(document).ready(function() {
             $('.toggle-edit').click(function() {
                 var modalId = $(this).attr('id').split('_')[1];
                 $('#detailsuratmasuk_' + modalId + ' .detail-view').toggle();
                 $('#detailsuratmasuk_' + modalId + ' .edit-form').toggle();
             });
 
-            // Initialize DataTable
-            $('#add-row').DataTable({
-                "pageLength": 5,
-            });
+            $('#basic-datatables').DataTable({
+			});
         });
     </script>
 @endsection

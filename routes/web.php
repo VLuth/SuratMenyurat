@@ -18,7 +18,9 @@ route::post('/download/{file}', [SuratmasukController::class, 'downloadfile'])->
 route::post('/view/{id}', [SuratmasukController::class, 'viewfile'])->name('view');
 route::put('/prosesupdate/{id}', [SuratmasukController::class, 'update'])->name('updatesuratmasuk');
 route::get('/formedit/suratmasuk/{id}', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
+route::get('/filter', [SuratmasukController::class, 'filter'])->name('filter');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
+
 
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');
 
