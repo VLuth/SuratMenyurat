@@ -32,8 +32,8 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 				
-				<a href="index.html" class="logo">
-					<img src="{{asset('atlantis')}}/assets/img/icon3.ico" alt="navbar brand" class="navbar-brand w-50 h-auto ">
+				<a class="logo" style="display:flex">
+					<img src="{{asset('atlantis')}}/assets/img/icon3.ico" alt="navbar brand" class="navbar-brand w-100 h-auto ">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
