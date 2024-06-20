@@ -213,20 +213,34 @@
     </div>
     @endforeach
 
-    <!-- Core JS Files -->
-    <script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
-    <script src="{{asset('Atlantis')}}/assets/js/core/popper.min.js"></script>
-    <script src="{{asset('Atlantis')}}/assets/js/core/bootstrap.min.js"></script>
-    <!-- jQuery UI -->
-    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        $(document).ready(function() {
 
-    <!-- jQuery Scrollbar -->
-    <script src="{{asset('Atlantis')}}/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-    <!-- Datatables -->
-    <script src="{{asset('Atlantis')}}/assets/js/plugin/datatables/datatables.min.js"></script>
-    <!-- Atlantis JS -->
-    <script src="{{asset('Atlantis')}}/assets/js/atlantis.min.js"></script>
+			$('#multi-filter-select').DataTable( {
+				"pageLength": 5,
+				initComplete: function () {
+					this.api().columns().every( function () {
+						var column = this;
+						var select = $('<select class="form-control"><option value=""></option></select>')
+						.appendTo( $(column.footer()).empty() )
+						.on( 'change', function () {
+							var val = $.fn.dataTable.util.escapeRegex(
+								$(this).val()
+								);
+
+							column
+							.search( val ? '^'+val+'$' : '', true, false )
+							.draw();
+						} );
+
+						column.data().unique().sort().each( function ( d, j ) {
+							select.append( '<option value="'+d+'">'+d+'</option>' )
+						} );
+					} );
+				}
+			});
+		});
+    </script>
 
     <script>
         $(document).ready(function() {
