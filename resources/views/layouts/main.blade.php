@@ -146,13 +146,18 @@
 										</a>
 									</li>
 									<li>
+										<a href="{{route('suratmasuk')}}">
+											<span class="sub-item">Verfikasi</span>
+										</a>
+									</li>
+									<li>
 										<a href="overlay-sidebar.html">
-											<span class="sub-item">Draft</span>
+											<span class="sub-item">Disposisi</span>
 										</a>
 									</li>
 									<li>
 										<a href="compact-sidebar.html">
-											<span class="sub-item">Riwayat</span>
+											<span class="sub-item">Tindak Lanjut</span>
 										</a>
 									</li>
 								</ul>
@@ -168,12 +173,22 @@
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="sidebar-style-1.html">
-											<span class="sub-item">Surat Keluar</span>
+											<span class="sub-item">Input Surat Keluar</span>
+										</a>
+									</li>
+									<li>
+										<a href="forms/forms.html">
+											<span class="sub-item">Verfikasi</span>
 										</a>
 									</li>
 									<li>
 										<a href="forms/forms.html">
 											<span class="sub-item">Draft</span>
+										</a>
+									</li>
+									<li>
+										<a href="forms/forms.html">
+											<span class="sub-item">Dibatalkan</span>
 										</a>
 									</li>
 									<li>

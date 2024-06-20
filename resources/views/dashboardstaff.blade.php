@@ -2,9 +2,7 @@
 @section('konten')
 <!-- End Sidebar -->
 
-<div class="main-panel">
-			<div class="content">
-				<div class="page-inner">
+
 					<div class="mt-2 mb-4">
 						<h2 class="text-white pb-2"></h2>
 						<h5 class="text-white op-7 mb-4"></h5>
@@ -68,8 +66,5 @@
 					</div>
 				</div>
 			</div>
-			<footer class="footer">
-				<div class="container-fluid">
-					
 			
 @endsection
