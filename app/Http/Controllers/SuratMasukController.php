@@ -140,29 +140,30 @@ class SuratmasukController extends Controller
                                    ->where('perihal', $perihal)
                                    ->get();
                 return view('suratmasuk', compact('query'));
-    } else if ($tanggalawal!=null && $tanggalakhir!=null && $perihal=null) {
+    } else if ($tanggalawal !=null && $tanggalakhir !=null) {
                 $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
                                    ->whereDate('created_at', '<=', $tanggalakhir)
                                    ->get();
                 return view('suratmasuk', compact('query'));
-    } else if ($tanggalawal!=null && $tanggalakhir=null && $perihal=null) {
+    } else if ($tanggalawal!=null) {
                 $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
                                     ->get();
                 return view('suratmasuk', compact('query'));
-    } else if ($tanggalawal=null && $tanggalakhir!=null && $perihal!=null) {
+    } else if ($tanggalakhir!=null && $perihal!=null) {
                 $query = suratmasuk::whereDate('created_at', '<=', $tanggalakhir)
                                     ->where('perihal', $perihal)
                                     ->get();
                 return view('suratmasuk', compact('query'));
-    } else if ($tanggalawal=null && $tanggalakhir!=null && $perihal=null) {
+    } else if ($tanggalakhir!=null) {
                 $query = suratmasuk::whereDate('created_at', '<=', $tanggalakhir)
                                     ->get();
                 return view('suratmasuk', compact('query'));
-    } else if ($tanggalawal=null && $tanggalakhir=null && $perihal!=null) {
+    } else if ($perihal!=null) {
                 $query = suratmasuk::where('perihal', $perihal)
                                     ->get();
                 return view('suratmasuk', compact('query'));
-    } else {return view('suratmasuk', compact('query'));}
+    } else {
+        return view('suratmasuk', compact('query'));}
     }
 
 

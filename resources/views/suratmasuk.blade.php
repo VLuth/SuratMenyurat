@@ -124,7 +124,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="detail-view">
+                    <div class="detail-suratmasuk">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
@@ -164,13 +164,13 @@
                             </div>
                             <div class="col-md-6" style="margin-left: 125px">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center">Status</b>
+                                    <b class="text-center"><center>Status</center></b>
                                     <label class="text-center">{{ $item->status }}</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center">File</b>
+                                    <b class="text-center"><center>File</center></b>
                                     <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
                                     <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
                                     <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
@@ -179,7 +179,7 @@
                         </div>
                     </div>
 
-                    <div class="edit-form" style="display: none">
+                    <div class="edit-suratmasuk" style="display: none">
                         <form method="post" action="{{route('updatesuratmasuk', $item->id)}}">
                             @method('put')
                             @csrf
@@ -217,31 +217,30 @@
                                 </div>
                             </div>
                             <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
-                                <button type="submit" class="btn btn-info edit-form" style="display: none; margin-right: 10px">Simpan</button>
-                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit edit-form" style="display: none; margin-right: -15px">Detail</button>
+                                <button type="submit" class="btn btn-info edit-suratmasuk" style="display: none; margin-right: 10px">Simpan</button>
+                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit edit-suratmasuk" style="display: none; margin-right: -15px">Detail</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer no-bd">
-                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit detail-view">Edit</button>
-                    <button type="button" class="btn btn-danger detail-view" data-dismiss="modal">Tutup</button>
+                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit detail-suratmasuk">Edit</button>
+                    <button type="button" class="btn btn-danger detail-suratmasuk" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>
     </div>
     @endforeach
 
+    <script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
+
     <script>
         $(document).ready(function() {
-            $('.toggle-edit').click(function() {
+            $('.tampilkan-edit').click(function() {
                 var modalId = $(this).attr('id').split('_')[1];
-                $('#detailsuratmasuk_' + modalId + ' .detail-view').toggle();
-                $('#detailsuratmasuk_' + modalId + ' .edit-form').toggle();
+                $('#detailsuratmasuk_' + modalId + ' .detail-suratmasuk').toggle();
+                $('#detailsuratmasuk_' + modalId + ' .edit-suratmasuk').toggle();
             });
-
-            $('#basic-datatables').DataTable({
-			});
         });
     </script>
 @endsection
