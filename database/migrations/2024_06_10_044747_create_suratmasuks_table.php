@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('tujuan');
             $table->string('pengirim');
             $table->string('status')->default('Menunggu Verifikasi');
+            $table->date('tanggalverifikasi')->nullable();
+            $table->string('keterangan')->nullable();
             $table->string('file')->nullable();
             $table->date('created_at')->nullable();
             $table->date('updated_at')->nullable();

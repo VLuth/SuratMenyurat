@@ -23,6 +23,7 @@ route::get('/filter', [SuratmasukController::class, 'filter'])->name('filter');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
 
 Route::get('/verifikasi', [StaffController::class, 'verifikasi'])->name('verifikasi');
+route::put('/verifikasi/{id}', [SuratmasukController::class, 'verifikasi'])->name('verifikasisuratmasuk');
 
 
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');

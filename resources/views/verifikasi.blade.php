@@ -117,107 +117,102 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="detail-suratmasuk">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Tanggal Surat</b>
-                                    <label>{{ $item->tanggal}}</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>No Surat</b>
-                                    <label>{{ $item->nosurat }}</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Perihal</b>
-                                    <label>{{ $item->perihal }}</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Pengirim</b>
-                                    <label>{{ $item->pengirim }}</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Tujuan</b>
-                                    <label>{{ $item->tujuan }}</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center">Status</b>
-                                    <label class="text-center">{{ $item->status }}</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center"><center>File</center></b>
-                                    <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
-                                    <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
-                                    <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="edit-suratmasuk" style="display: none">
-                        <form method="post" action="{{route('updatesuratmasuk', $item->id)}}">
-                            @method('put')
-                            @csrf
+                    <ul class="nav nav-pills nav-secondary" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-suratmasuk-tab" data-toggle="pill" href="#pills-suratmasuk" role="tab" aria-controls="pills-suratmasuk" aria-selected="true">Surat Masuk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-verifikasi-tab" data-toggle="pill" href="#pills-verifikasi" role="tab" aria-controls="pills-verifikasi" aria-selected="false">Verifikasi</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+                        <div class="detail-suratmasuk tab-pane fade show active" id="pills-suratmasuk" role="tabpanel" aria-labelledby="pills-suratmasuk-tab">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label>No Surat</label>
-                                        <input name="nosurat" type="text" class="form-control" value="{{ $item->nosurat }}" style="background-color: #bdbdbd">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label>Tanggal Surat</label>
-                                        <input name="tanggal" type="date" class="form-control" value="{{ $item->tanggal }}" style="background-color: #bdbdbd">
+                                        <b>Tanggal Surat</b>
+                                        <label>{{ $item->tanggal}}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label>Perihal</label>
-                                        <input name="perihal" type="text" class="form-control" value="{{ $item->perihal }}" style="background-color: #bdbdbd">
+                                        <b>No Surat</b>
+                                        <label>{{ $item->nosurat }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label>Pengirim</label>
-                                        <input name="pengirim" type="text" class="form-control" value="{{ $item->pengirim }}" style="background-color: #bdbdbd">
+                                        <b>Perihal</b>
+                                        <label>{{ $item->perihal }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label>Tujuan</label>
-                                        <input name="tujuan" type="text" class="form-control" value="{{ $item->tujuan }}" style="background-color: #bdbdbd">
+                                        <b>Pengirim</b>
+                                        <label>{{ $item->pengirim }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tujuan</b>
+                                        <label>{{ $item->tujuan }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b class="text-center">Status</b>
+                                        <label class="text-center">{{ $item->status }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label class="text-center" for="exampleFormControlFile1">File</label>
-                                        <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1" style="margin-left: 125px">
+                                        <b class="text-center"><center>File</center></b>
+                                        <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
+                                        <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
                                         <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
-                                <button type="submit" class="btn btn-info edit-suratmasuk" style="display: none; margin-right: 10px">Simpan</button>
-                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit edit-suratmasuk" style="display: none; margin-right: -15px">Detail</button>
+                        </div>
+                        <div class="tab-pane fade" id="pills-verifikasi" role="tabpanel" aria-labelledby="pills-verifikasi-tab">
+                            <div>
+                                <form method="post" action="{{route('verifikasisuratmasuk', $item->id)}}">
+                                    @method('put')
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                                <b>Tanggal Verifikasi</b>
+                                                <input name="tanggalverifikasi" type="date" class="form-control" style="background-color: #bdbdbd">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                                <b>Verifikasi</b>
+                                                <select class="form-control" name="status">
+                                                    <option hidden >Pilih Aksi</option>
+                                                        <option>Lanjut</option>
+                                                        <option>Tidak Lanjut</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                                <b>Keterangan</b>
+                                                <input name="keterangan" type="text" class="form-control" style="background-color: #bdbdbd">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
+                                        <button type="submit" class="btn btn-success" style="margin-right: 10px">Verifikasi</button>
+                                        <button type="button" class="btn btn-primary" style="margin-right: -15px">Selesai</button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer no-bd">
-                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit detail-suratmasuk">Edit</button>
                     <button type="button" class="btn btn-danger detail-suratmasuk" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
