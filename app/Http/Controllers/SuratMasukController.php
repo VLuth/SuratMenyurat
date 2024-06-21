@@ -36,7 +36,7 @@ class SuratmasukController extends Controller
     {
         if ($request->hasFile('file')){
         $file = $request->file('file');
-        $text = $file->getClientOriginalExtension();
+        $text = $file->getClientOriginalName();
         $filename = time() .".". $text;
         $filepath = $file->storeAs('public', $filename);
         $this->suratmasuk->file = $filename;
@@ -46,6 +46,7 @@ class SuratmasukController extends Controller
         $this->suratmasuk->perihal = $request->perihal;
         $this->suratmasuk->tujuan = $request->tujuan;
         $this->suratmasuk->pengirim = $request->pengirim;
+        $this->suratmasuk->tanggal = $request->tanggal;
         
 
         $rules = [
@@ -102,7 +103,7 @@ class SuratmasukController extends Controller
 
         if ($request->hasFile('file')){
             $file = $request->file('file');
-            $text = $file->getClientOriginalExtension();
+            $text = $file->getClientOriginalName();
             $filename = time() .".". $text;
             $filepath = $file->storeAs('public', $filename);
             $update->file = $filename;
@@ -112,6 +113,7 @@ class SuratmasukController extends Controller
         $update->perihal = $request->perihal;
         $update->tujuan = $request->tujuan;
         $update->pengirim = $request->pengirim;
+        $update->tanggal = $request->tanggal;
 
         $update->save();
 
@@ -124,7 +126,11 @@ class SuratmasukController extends Controller
      */
     public function destroy($id)
     {
+
         $hapus = suratmasuk::findOrFail($id);
+        $file = $hapus->file;
+        $filepath = 'storage/{{$file}}';
+        storage::delete($file);
         $hapus->delete();
         return redirect()->route('suratmasuk')->with('successdestroy', 'data dihapus');
     }
@@ -135,27 +141,27 @@ class SuratmasukController extends Controller
     $perihal = $request->filterperihal;
 
     if ($tanggalawal !=null && $tanggalakhir!=null && $perihal!=null) {
-                $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
-                                   ->whereDate('created_at', '<=', $tanggalakhir)
+                $query = suratmasuk::whereDate('tanggal', '>=', $tanggalawal)
+                                   ->whereDate('tanggal', '<=', $tanggalakhir)
                                    ->where('perihal', $perihal)
                                    ->get();
                 return view('suratmasuk', compact('query'));
     } else if ($tanggalawal !=null && $tanggalakhir !=null) {
-                $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
-                                   ->whereDate('created_at', '<=', $tanggalakhir)
+                $query = suratmasuk::whereDate('tanggal', '>=', $tanggalawal)
+                                   ->whereDate('tanggal', '<=', $tanggalakhir)
                                    ->get();
                 return view('suratmasuk', compact('query'));
     } else if ($tanggalawal!=null) {
-                $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
+                $query = suratmasuk::whereDate('tanggal', '>=', $tanggalawal)
                                     ->get();
                 return view('suratmasuk', compact('query'));
     } else if ($tanggalakhir!=null && $perihal!=null) {
-                $query = suratmasuk::whereDate('created_at', '<=', $tanggalakhir)
+                $query = suratmasuk::whereDate('tanggal', '<=', $tanggalakhir)
                                     ->where('perihal', $perihal)
                                     ->get();
                 return view('suratmasuk', compact('query'));
     } else if ($tanggalakhir!=null) {
-                $query = suratmasuk::whereDate('created_at', '<=', $tanggalakhir)
+                $query = suratmasuk::whereDate('tanggal', '<=', $tanggalakhir)
                                     ->get();
                 return view('suratmasuk', compact('query'));
     } else if ($perihal!=null) {
@@ -163,6 +169,7 @@ class SuratmasukController extends Controller
                                     ->get();
                 return view('suratmasuk', compact('query'));
     } else {
+        $query = suratmasuk::all();
         return view('suratmasuk', compact('query'));}
     }
 

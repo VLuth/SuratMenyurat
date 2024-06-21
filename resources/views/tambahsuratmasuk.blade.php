@@ -42,10 +42,10 @@
                                                     <input type="text" class="form-control form-control" name="nosurat" id="defaultInput" placeholder="No Surat">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-lg-6">
+											<div class="col-md-6 col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="largeInput">Tujuan</label>
-                                                    <input type="text" class="form-control form-control" name="tujuan" id="defaultInput" placeholder="Tujuan">
+                                                    <label for="largeInput">Tanggal Surat</label>
+                                                    <input type="date" class="form-control form-control" name="tanggal">
                                                 </div>
                                             </div>
                                         </div>
@@ -69,10 +69,21 @@
 									<div class="card-body">
                                         <div class="row">
 											<div class="col-md-6 col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="largeInput">Tujuan</label>
+                                                    <input type="text" class="form-control form-control" name="tujuan" id="defaultInput" placeholder="Tujuan">
+                                                </div>
+                                            </div>
+											<div class="col-md-6 col-lg-6">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">Example file input</label>
 													<input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
-												</div>
+											</div>
+										</div>
+									</div>
+									<div class="card-body">
+                                        <div class="row">
+											<div class="col-md-6 col-lg-6">
 												<div class="card-action">
 													<button type="submit" class="btn btn-success">Tambah</button>
 													<a class="btn btn-danger" style="-webkit-text-fill-color: white">Batal</a>

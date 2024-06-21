@@ -18,6 +18,13 @@ class StaffController extends Controller
         $query = SuratMasuk::all();
         return view ('suratmasuk', compact('query'));
     }
+
+
+    public function verifikasi(){
+        $query = SuratMasuk::where('status', 'Menunggu Verifikasi');
+        return view ('verifikasi', compact('query'));
+    }
+
     public function suratkeluarstaff(){
         return view('suratkeluar');
     }

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/suratmasuk/{id}', 'SuratMasukController@show')->name('tampilkansuratmasuk');
 
 route::get('/dashboard', [StaffController::class, 'index'])->name('dashboard');
+
 Route::get('/suratmasuk', [StaffController::class, 'suratmasukstaff'])->name('suratmasuk');
 Route::get('/formtambah/suratmasuk', [SuratmasukController::class, 'create'])->name('tambahsuratmasuk');
 route::post('/suratmasuk', [SuratmasukController::class, 'store'])->name('storesuratmasuk');
@@ -20,6 +21,8 @@ route::put('/prosesupdate/{id}', [SuratmasukController::class, 'update'])->name(
 route::get('/formedit/suratmasuk/{id}', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
 route::get('/filter', [SuratmasukController::class, 'filter'])->name('filter');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
+
+Route::get('/verifikasi', [StaffController::class, 'verifikasi'])->name('verifikasi');
 
 
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');

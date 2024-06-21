@@ -79,7 +79,7 @@
                                         @foreach ($query as $item)
                                         <tr>
                                             <td>{{ $number }}</td>
-                                            <td>{{ $item->tanggal}}</td>
+                                            <td>{{ $item->created_at->format('d/m/Y') }}</td>
                                             <td>{{ $item->nosurat }}</td>
                                             <td>{{ $item->perihal }}</td>
                                             <td>{{ $item->tujuan }}</td>
@@ -129,7 +129,13 @@
                             <div class="col-sm-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                     <b>Tanggal Surat</b>
-                                    <label>{{ $item->tanggal}}</label>
+                                    <label>{{ $item->created_at->format('d/m/Y') }}</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                    <b>Terakhir Diubah</b>
+                                    <label>{{ $item->updated_at->format('d/m/Y') }}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -156,9 +162,9 @@
                                     <label>{{ $item->tujuan }}</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" style="margin-left: 125px">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center">Status</b>
+                                    <b class="text-center"><center>Status</center></b>
                                     <label class="text-center">{{ $item->status }}</label>
                                 </div>
                             </div>
@@ -182,12 +188,6 @@
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <label>No Surat</label>
                                         <input name="nosurat" type="text" class="form-control" value="{{ $item->nosurat }}" style="background-color: #bdbdbd">
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <label>Tanggal Surat</label>
-                                        <input name="tanggal" type="date" class="form-control" value="{{ $item->tanggal }}" style="background-color: #bdbdbd">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

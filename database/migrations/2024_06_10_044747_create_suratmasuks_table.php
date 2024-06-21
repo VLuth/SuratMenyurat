@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('suratmasuks', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal')->format('d/m/Y');
             $table->string('nosurat');
             $table->string('perihal');
             $table->string('tujuan');
             $table->string('pengirim');
             $table->string('status')->default('Menunggu Verifikasi');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->date('created_at')->nullable();
             $table->date('updated_at')->nullable();
         });

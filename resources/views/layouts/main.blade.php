@@ -146,7 +146,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="{{route('suratmasuk')}}">
+										<a href="{{route('verifikasi')}}">
 											<span class="sub-item">Verfikasi</span>
 										</a>
 									</li>
