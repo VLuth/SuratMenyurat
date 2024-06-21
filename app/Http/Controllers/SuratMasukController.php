@@ -14,7 +14,7 @@ class SuratmasukController extends Controller
     public function index()
     {
         $query = SuratMasuk::all();
-        return view ('suratmasuk', compact('query', 'edit'));
+        return view ('suratmasuk', compact('query'));
     }
 
     /**
@@ -128,4 +128,43 @@ class SuratmasukController extends Controller
         $hapus->delete();
         return redirect()->route('suratmasuk')->with('successdestroy', 'data dihapus');
     }
+
+    public function filter(Request $request){
+    $tanggalawal = $request->tanggalawal;
+    $tanggalakhir = $request->tanggalakhir;
+    $perihal = $request->filterperihal;
+
+    if ($tanggalawal !=null && $tanggalakhir!=null && $perihal!=null) {
+                $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
+                                   ->whereDate('created_at', '<=', $tanggalakhir)
+                                   ->where('perihal', $perihal)
+                                   ->get();
+                return view('suratmasuk', compact('query'));
+    } else if ($tanggalawal !=null && $tanggalakhir !=null) {
+                $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
+                                   ->whereDate('created_at', '<=', $tanggalakhir)
+                                   ->get();
+                return view('suratmasuk', compact('query'));
+    } else if ($tanggalawal!=null) {
+                $query = suratmasuk::whereDate('created_at', '>=', $tanggalawal)
+                                    ->get();
+                return view('suratmasuk', compact('query'));
+    } else if ($tanggalakhir!=null && $perihal!=null) {
+                $query = suratmasuk::whereDate('created_at', '<=', $tanggalakhir)
+                                    ->where('perihal', $perihal)
+                                    ->get();
+                return view('suratmasuk', compact('query'));
+    } else if ($tanggalakhir!=null) {
+                $query = suratmasuk::whereDate('created_at', '<=', $tanggalakhir)
+                                    ->get();
+                return view('suratmasuk', compact('query'));
+    } else if ($perihal!=null) {
+                $query = suratmasuk::where('perihal', $perihal)
+                                    ->get();
+                return view('suratmasuk', compact('query'));
+    } else {
+        return view('suratmasuk', compact('query'));}
+    }
+
+
 }

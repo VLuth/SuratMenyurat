@@ -27,11 +27,30 @@
                     </ul>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-16">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Surat Masuk</h4>
+                                <form class="row" method="GET" action="{{route('filter')}}" style="display:flex; max-width: 1000px">
+                                    <div style="width: 200px; margin-left:10px">
+                                        <label> Perihal </label>
+                                        <input type="text" name="filterperihal" class="form-control">
+                                    </div>
+                                    <div style="width: 200px; margin-left:10px">
+                                        <label> Tanggal Awal </label>
+                                        <input type="date" name="tanggalawal" class="form-control">
+                                    </div>
+                                    <div style="width: 200px; margin-left:10px">
+                                        <label> Tanggal Akhir </label>
+                                        <input type="date" name="tanggalakhir" class="form-control">
+                                    </div>
+                                    <div class="col-sm" style="align-items: center">
+                                        <button type="submit" class="btn btn-success btn-sm"> Cari </button>
+                                    </div>
+                                    <div class="col-sm" style="align-items:center">
+                                        <button href="{{route('suratmasuk')}}" class="btn btn-danger btn-sm"> reset </button>
+                                    </div>
+                                </form>
                                 <a class="btn btn-primary btn-round ml-auto" href="{{ route('tambahsuratmasuk') }}">
                                     <i class="fa fa-plus"></i>
                                     Tambah Data
@@ -40,7 +59,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="add-row" class="display table table-striped table-hover">
+                                <table class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -105,7 +124,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="detail-view">
+                    <div class="detail-suratmasuk">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
@@ -145,13 +164,13 @@
                             </div>
                             <div class="col-md-6" style="margin-left: 125px">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center">Status</b>
+                                    <b class="text-center"><center>Status</center></b>
                                     <label class="text-center">{{ $item->status }}</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center">File</b>
+                                    <b class="text-center"><center>File</center></b>
                                     <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
                                     <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
                                     <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
@@ -160,7 +179,7 @@
                         </div>
                     </div>
 
-                    <div class="edit-form" style="display: none">
+                    <div class="edit-suratmasuk" style="display: none">
                         <form method="post" action="{{route('updatesuratmasuk', $item->id)}}">
                             @method('put')
                             @csrf
@@ -198,61 +217,29 @@
                                 </div>
                             </div>
                             <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
-                                <button type="submit" class="btn btn-info edit-form" style="display: none; margin-right: 10px">Simpan</button>
-                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit edit-form" style="display: none; margin-right: -15px">Detail</button>
+                                <button type="submit" class="btn btn-info edit-suratmasuk" style="display: none; margin-right: 10px">Simpan</button>
+                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit edit-suratmasuk" style="display: none; margin-right: -15px">Detail</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer no-bd">
-                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary toggle-edit detail-view">Edit</button>
-                    <button type="button" class="btn btn-danger detail-view" data-dismiss="modal">Tutup</button>
+                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit detail-suratmasuk">Edit</button>
+                    <button type="button" class="btn btn-danger detail-suratmasuk" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>
     </div>
     @endforeach
 
-    <script>
-        $(document).ready(function() {
-
-			$('#multi-filter-select').DataTable( {
-				"pageLength": 5,
-				initComplete: function () {
-					this.api().columns().every( function () {
-						var column = this;
-						var select = $('<select class="form-control"><option value=""></option></select>')
-						.appendTo( $(column.footer()).empty() )
-						.on( 'change', function () {
-							var val = $.fn.dataTable.util.escapeRegex(
-								$(this).val()
-								);
-
-							column
-							.search( val ? '^'+val+'$' : '', true, false )
-							.draw();
-						} );
-
-						column.data().unique().sort().each( function ( d, j ) {
-							select.append( '<option value="'+d+'">'+d+'</option>' )
-						} );
-					} );
-				}
-			});
-		});
-    </script>
+    <script src="{{asset('Atlantis')}}/assets/js/core/jquery.3.2.1.min.js"></script>
 
     <script>
         $(document).ready(function() {
-            $('.toggle-edit').click(function() {
+            $('.tampilkan-edit').click(function() {
                 var modalId = $(this).attr('id').split('_')[1];
-                $('#detailsuratmasuk_' + modalId + ' .detail-view').toggle();
-                $('#detailsuratmasuk_' + modalId + ' .edit-form').toggle();
-            });
-
-            // Initialize DataTable
-            $('#add-row').DataTable({
-                "pageLength": 5,
+                $('#detailsuratmasuk_' + modalId + ' .detail-suratmasuk').toggle();
+                $('#detailsuratmasuk_' + modalId + ' .edit-suratmasuk').toggle();
             });
         });
     </script>
