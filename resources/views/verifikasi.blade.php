@@ -5,7 +5,7 @@
 
             <div class="page-inner">
                 <div class="page-header">
-                    <h4 class="page-title">Index Surat Masuk</h4>
+                    <h4 class="page-title">Verifikasi Surat Masuk</h4>
                     <ul class="breadcrumbs">
                         <li class="nav-home">
                             <a href="#">
@@ -51,10 +51,6 @@
                                         <button href="{{route('suratmasuk')}}" class="btn btn-danger btn-sm"> reset </button>
                                     </div>
                                 </form>
-                                <a class="btn btn-primary btn-round ml-auto" href="{{ route('tambahsuratmasuk') }}">
-                                    <i class="fa fa-plus"></i>
-                                    Tambah Data
-                                </a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -79,7 +75,7 @@
                                         @foreach ($query as $item)
                                         <tr>
                                             <td>{{ $number }}</td>
-                                            <td>{{ $item->created_at->format('d/m/Y') }}</td>
+                                            <td>{{ $item->tanggal}}</td>
                                             <td>{{ $item->nosurat }}</td>
                                             <td>{{ $item->perihal }}</td>
                                             <td>{{ $item->tujuan }}</td>
@@ -89,9 +85,6 @@
                                                 <div class="form-button-action">
                                                     <a href="#" class="btn btn-link btn-primary btn-lg toggle-edit" data-toggle="modal" data-target="#detailsuratmasuk_{{ $item->id }}" data-original-title="Detail" data-id="{{ $item->id }}">
                                                         <i class="fa fa-info-circle fa-lg"></i>
-                                                    </a>
-                                                    <a href="{{ route('hapussuratmasuk', $item->id) }}" class="btn btn-link btn-danger" onclick="return confirm('Yakin?')" data-original-title="Hapus">
-                                                        <i class="fa fa-trash"></i>
                                                     </a>
                                                 </div>
                                             </td>
@@ -129,13 +122,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                     <b>Tanggal Surat</b>
-                                    <label>{{ $item->created_at->format('d/m/Y') }}</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Terakhir Diubah</b>
-                                    <label>{{ $item->updated_at->format('d/m/Y') }}</label>
+                                    <label>{{ $item->tanggal}}</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -162,9 +149,9 @@
                                     <label>{{ $item->tujuan }}</label>
                                 </div>
                             </div>
-                            <div class="col-md-6" style="margin-left: 125px">
+                            <div class="col-md-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center"><center>Status</center></b>
+                                    <b class="text-center">Status</b>
                                     <label class="text-center">{{ $item->status }}</label>
                                 </div>
                             </div>
@@ -188,6 +175,12 @@
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <label>No Surat</label>
                                         <input name="nosurat" type="text" class="form-control" value="{{ $item->nosurat }}" style="background-color: #bdbdbd">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <label>Tanggal Surat</label>
+                                        <input name="tanggal" type="date" class="form-control" value="{{ $item->tanggal }}" style="background-color: #bdbdbd">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

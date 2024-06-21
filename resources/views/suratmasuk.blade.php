@@ -165,8 +165,8 @@
                             <div class="col-md-12">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                     <b class="text-center"><center>File</center></b>
-                                    <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
-                                    <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
+                                    <label class="text-center"><a href="storage/{{$item->file}}">View File</a></label>
+                                    <label class="text-center"><a href="{{route('download', $item->file)}}">Download File</a></label>
                                     <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
                                 </div>
                             </div>

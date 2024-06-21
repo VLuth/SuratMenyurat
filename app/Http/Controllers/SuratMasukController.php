@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\storage;
+use Illuminate\Support\Facades\response;
 use App\Models\suratmasuk;
 
 class SuratmasukController extends Controller
@@ -52,11 +53,13 @@ class SuratmasukController extends Controller
         $rules = [
             'nosurat' => 'required',
             'perihal' => 'required',
-            'tujuan' => 'required'
+            'tujuan' => 'required',
+            'file' => "required|mimes:application/pdf, application/x-pdf,application/acrobat, applications/vnd.pdf, text/pdf, text/x-pdf|max:10000"
         ];
 
         $message = [
             'required' => 'form ini harus diisi',
+            'pdf' => 'file harus berupa pdf'
         ];
 
         $this->suratmasuk->save();
@@ -71,17 +74,12 @@ class SuratmasukController extends Controller
     public function show($id)
     {
         $edit = SuratMasuk::findOrFail($id);
-        return response()->json($edit);
+        return view('view', compact('edit'));
     }
 
-    public function downloadfile($request, $file)
+    public function downloadfile($file)
     {
-        return response()->download(public_path('storage/app/public/suratmasuk' .$file));
-    }
-
-    public function viewfile($id)
-    {
-        return response()->download(public_path('storage/app/public/suratmasuk' .$file));
+        return response()->download(public_path('storage/' . $file));
     }
 
     /**

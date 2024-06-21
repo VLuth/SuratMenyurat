@@ -76,7 +76,7 @@
                                             </div>
 											<div class="col-md-6 col-lg-6">
 												<div class="form-group">
-													<label for="exampleFormControlFile1">Example file input</label>
+													<label for="exampleFormControlFile1">Upload File (PDF) </label>
 													<input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
 											</div>
 										</div>
