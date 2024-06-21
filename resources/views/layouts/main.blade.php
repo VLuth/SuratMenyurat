@@ -151,7 +151,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="overlay-sidebar.html">
+										<a href="{{route('disposisi')}}">
 											<span class="sub-item">Disposisi</span>
 										</a>
 									</li>

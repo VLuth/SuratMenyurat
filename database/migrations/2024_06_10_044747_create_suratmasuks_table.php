@@ -20,7 +20,10 @@ return new class extends Migration
             $table->string('pengirim');
             $table->string('status')->default('Menunggu Verifikasi');
             $table->date('tanggalverifikasi')->nullable();
+            $table->date('tanggaldisposisi')->nullable();
             $table->string('keterangan')->nullable();
+            $table->string('keterangandisposisi')->nullable();
+            $table->string('kepada')->nullable();
             $table->string('file')->nullable();
             $table->date('created_at')->nullable();
             $table->date('updated_at')->nullable();

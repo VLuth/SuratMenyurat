@@ -25,6 +25,9 @@ Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->n
 Route::get('/verifikasi', [StaffController::class, 'verifikasi'])->name('verifikasi');
 route::put('/verifikasi/{id}', [SuratmasukController::class, 'verifikasi'])->name('verifikasisuratmasuk');
 
+Route::get('/disposisi', [StaffController::class, 'disposisi'])->name('disposisi');
+route::put('/disposisi/{id}', [SuratmasukController::class, 'disposisi'])->name('disposisisuratmasuk');
+
 
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');
 

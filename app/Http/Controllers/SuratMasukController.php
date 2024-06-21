@@ -131,6 +131,20 @@ class SuratmasukController extends Controller
         return redirect()->route('verifikasi');
     }
 
+    public function disposisi(Request $request, $id)
+    {
+        $update = suratmasuk::findOrFail($id);
+
+        $update->tanggaldisposisi = $request->tanggaldisposisi;
+        $update->status = $request->status;
+        $update->keterangandisposisi = $request->keterangandisposisi;
+        $update->kepada = $request->kepada;
+
+        $update->save();
+
+        return redirect()->route('verifikasi');
+    }
+
 
     /**
      * Remove the specified resource from storage.
