@@ -119,17 +119,16 @@
                 <div class="modal-body">
                     <ul class="nav nav-pills nav-secondary" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="pills-suratmasuk-tab" data-toggle="pill" href="#pills-suratmasuk" role="tab" aria-controls="pills-suratmasuk" aria-selected="true">Surat Masuk</a>
+                            <a class="nav-link active" id="pills-suratmasuk-tab" data-toggle="pill" href="#pills-suratmasuk_{{$item->id}}" role="tab" aria-controls="pills-suratmasuk" aria-selected="true">Surat Masuk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="pills-verifikasi-tab" data-toggle="pill" href="#pills-verifikasi" role="tab" aria-controls="pills-verifikasi" aria-selected="false">Verifikasi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="pills-disposisi-tab" data-toggle="pill" href="#pills-disposisi" role="tab" aria-controls="pills-disposisi" aria-selected="false">Disposisi</a>
+                            <a class="nav-link" id="pills-disposisi-tab" data-toggle="pill" href="#pills-disposisi_{{$item->id}}" role="tab" aria-controls="pills-disposisi" aria-selected="false">Disposisi</a>
                         </li>
                     </ul>
                     <div class="tab-content mt-2 mb-3" id="pills-tabContent">
-                        <div class="detail-suratmasuk tab-pane fade show active" id="pills-suratmasuk" role="tabpanel" aria-labelledby="pills-suratmasuk-tab">
+                        
+                        <div class="detail-suratmasuk tab-pane fade show active" id="pills-suratmasuk_{{$item->id}}" role="tabpanel" aria-labelledby="pills-suratmasuk-tab">
+                            <h2 class="text-center">Detail Surat Masuk</h2>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
@@ -176,44 +175,23 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="pills-verifikasi" role="tabpanel" aria-labelledby="pills-verifikasi-tab">
-                            <div>
-                                <form method="post" action="{{route('verifikasisuratmasuk', $item->id)}}">
-                                    @method('put')
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                                <b>Tanggal Verifikasi</b>
-                                                <input name="tanggalverifikasi" type="date" class="form-control" style="background-color: #bdbdbd">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                                <b>Verifikasi</b>
-                                                <select class="form-control" name="status">
-                                                    <option hidden >Pilih Aksi</option>
-                                                        <option>Lanjut</option>
-                                                        <option>Tidak Lanjut</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                                <b>Keterangan</b>
-                                                <input name="keterangan" type="text" class="form-control" style="background-color: #bdbdbd">
-                                            </div>
-                                        </div>
+                            <h2 class="text-center">Detail Verifikasi</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tanggal Verifikasi</b>
+                                        <label>{{ $item->tanggalverifikasi}}</label>
                                     </div>
-                                    <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
-                                        <button type="submit" class="btn btn-success" style="margin-right: 10px">Verifikasi</button>
-                                        <button type="button" class="btn btn-primary" style="margin-right: -15px">Selesai</button>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Keterangan Verifikasi</b>
+                                        <label>{{ $item->keterangan}}</label>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-disposisi" role="tabpanel" aria-labelledby="pills-disposisi-tab">
+                        <div class="tab-pane fade" id="pills-disposisi_{{$item->id}}" role="tabpanel" aria-labelledby="pills-disposisi-tab">
                             <div>
                                 <form method="post" action="{{route('disposisisuratmasuk', $item->id)}}">
                                     @method('put')

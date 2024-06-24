@@ -142,7 +142,20 @@ class SuratmasukController extends Controller
 
         $update->save();
 
-        return redirect()->route('verifikasi');
+        return redirect()->route('disposisi');
+    }
+
+    public function tindaklanjut(Request $request, $id)
+    {
+        $update = suratmasuk::findOrFail($id);
+
+        $update->tanggaltindaklanjut = $request->tanggaltindaklanjut;
+        $update->status = $request->status;
+        $update->hasiltindaklanjut = $request->hasiltindaklanjut;
+
+        $update->save();
+
+        return redirect()->route('disposisi');
     }
 
 

@@ -23,8 +23,7 @@
 	<link rel="stylesheet" href="{{asset('atlantis')}}/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{asset('atlantis')}}/assets/css/atlantis.min.css">
 
-	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="{{asset('atlantis')}}/assets/css/demo.css">
+
 </head>
 <body>
 	<div class="wrapper">
@@ -156,7 +155,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="compact-sidebar.html">
+										<a href="{{route('tindaklanjut')}}">
 											<span class="sub-item">Tindak Lanjut</span>
 										</a>
 									</li>

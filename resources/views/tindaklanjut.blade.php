@@ -5,7 +5,7 @@
 
             <div class="page-inner">
                 <div class="page-header">
-                    <h4 class="page-title">Verifikasi Surat Masuk</h4>
+                    <h4 class="page-title">Tindak Lanjut Surat Masuk</h4>
                     <ul class="breadcrumbs">
                         <li class="nav-home">
                             <a href="#">
@@ -122,11 +122,13 @@
                             <a class="nav-link active" id="pills-suratmasuk-tab" data-toggle="pill" href="#pills-suratmasuk_{{$item->id}}" role="tab" aria-controls="pills-suratmasuk" aria-selected="true">Surat Masuk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="pills-verifikasi-tab" data-toggle="pill" href="#pills-verifikasi_{{$item->id}}" role="tab" aria-controls="pills-verifikasi" aria-selected="false">Verifikasi</a>
+                            <a class="nav-link" id="pills-tindaklanjut-tab" data-toggle="pill" href="#pills-tindaklanjut_{{$item->id}}" role="tab" aria-controls="pills-tindaklanjut" aria-selected="false">Tindak Lanjut</a>
                         </li>
                     </ul>
                     <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+                        
                         <div class="detail-suratmasuk tab-pane fade show active" id="pills-suratmasuk_{{$item->id}}" role="tabpanel" aria-labelledby="pills-suratmasuk-tab">
+                            <h2 class="text-center">Detail Surat Masuk</h2>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
@@ -173,39 +175,81 @@
                                     </div>
                                 </div>
                             </div>
+                            <h2 class="text-center">Detail Verifikasi</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tanggal Verifikasi</b>
+                                        <label>{{ $item->tanggalverifikasi}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Keterangan Verifikasi</b>
+                                        <label>{{ $item->keterangan}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="text-center">Detail Disposisi</h2>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tanggal Disposisi</b>
+                                        <label>{{ $item->tanggaldisposisi}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>aksi</b>
+                                        <label>{{ $item->status}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>kepada</b>
+                                        <label>{{ $item->kepada}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Keterangan</b>
+                                        <label>{{ $item->keterangandisposisi}}</label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-verifikasi_{{$item->id}}" role="tabpanel" aria-labelledby="pills-verifikasi-tab">
+                        <div class="tab-pane fade" id="pills-tindaklanjut_{{$item->id}}" role="tabpanel" aria-labelledby="pills-tindaklanjut-tab">
                             <div>
-                                <form method="post" action="{{route('verifikasisuratmasuk', $item->id)}}">
+                                <form method="post" action="{{route('tindaklanjutsuratmasuk', $item->id)}}">
                                     @method('put')
                                     @csrf
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                                <b>Tanggal Verifikasi</b>
-                                                <input name="tanggalverifikasi" type="date" class="form-control" style="background-color: #bdbdbd">
+                                                <b>Tanggal Tindak Lanjut</b>
+                                                <input name="tanggaltindaklanjut" type="date" class="form-control" style="background-color: #bdbdbd">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                                <b>Verifikasi</b>
+                                                <b>Hasil Tindak Lanjut</b>
                                                 <select class="form-control" name="status">
                                                     <option hidden >Pilih Aksi</option>
-                                                        <option>Lanjut</option>
-                                                        <option>Tidak Lanjut</option>
+                                                        <option>Draft</option>
+                                                        <option>Dibatalkan</option>
+                                                        <option>Terkirim</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                                <b>Keterangan</b>
-                                                <input name="keterangan" type="text" class="form-control" style="background-color: #bdbdbd">
+                                                <b>Petugas</b>
+                                                <input name="petugas" type="text" class="form-control" style="background-color: #bdbdbd">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
-                                        <button type="submit" class="btn btn-success" style="margin-right: 10px">Verifikasi</button>
-                                        <button type="button" class="btn btn-primary" style="margin-right: -15px">Selesai</button>
+                                        <button type="submit" class="btn btn-success" style="margin-right: 10px">Submit</button>
                                     </div>
                                 </form>
                             </div>

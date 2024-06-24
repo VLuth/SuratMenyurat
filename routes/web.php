@@ -28,6 +28,8 @@ route::put('/verifikasi/{id}', [SuratmasukController::class, 'verifikasi'])->nam
 Route::get('/disposisi', [StaffController::class, 'disposisi'])->name('disposisi');
 route::put('/disposisi/{id}', [SuratmasukController::class, 'disposisi'])->name('disposisisuratmasuk');
 
+Route::get('/tindaklanjut', [StaffController::class, 'tindaklanjut'])->name('tindaklanjut');
+route::put('/tindaklanjut/{id}', [SuratmasukController::class, 'tindaklanjut'])->name('tindaklanjutsuratmasuk');
 
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');
 
