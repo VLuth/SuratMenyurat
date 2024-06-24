@@ -36,16 +36,16 @@
                                     @csrf
                                     <div class="card-body">
                                         <div class="row">
+											<div class="col-md-6 col-lg-6">
+												<div class="form-group">
+													<label for="largeInput">Tanggal Surat</label>
+													<input type="date" class="form-control form-control" name="tanggal">
+												</div>
+											</div>
                                             <div class="col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="largeInput">No Surat</label>
                                                     <input type="text" class="form-control form-control" name="nosurat" id="defaultInput" placeholder="No Surat">
-                                                </div>
-                                            </div>
-											<div class="col-md-6 col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="largeInput">Tanggal Surat</label>
-                                                    <input type="date" class="form-control form-control" name="tanggal">
                                                 </div>
                                             </div>
                                         </div>
@@ -58,10 +58,10 @@
                                                     <input type="text" class="form-control form-control" name="perihal" id="defaultInput" placeholder="Perihal">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-lg-6">
+											<div class="col-md-6 col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="largeInput">Pengirim</label>
-                                                    <input type="text" class="form-control form-control" name="pengirim" id="defaultInput" placeholder="Pengirim">
+                                                    <label for="largeInput">Tujuan</label>
+                                                    <input type="text" class="form-control form-control" name="tujuan" id="defaultInput" placeholder="Tujuan">
                                                 </div>
                                             </div>
                                         </div>
@@ -70,8 +70,8 @@
                                         <div class="row">
 											<div class="col-md-6 col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="largeInput">Tujuan</label>
-                                                    <input type="text" class="form-control form-control" name="tujuan" id="defaultInput" placeholder="Tujuan">
+                                                    <label for="largeInput">Pengirim</label>
+                                                    <input type="text" class="form-control form-control" name="pengirim" id="defaultInput" placeholder="Pengirim">
                                                 </div>
                                             </div>
 											<div class="col-md-6 col-lg-6">

@@ -75,7 +75,7 @@
                                         @foreach ($query as $item)
                                         <tr>
                                             <td>{{ $number }}</td>
-                                            <td>{{ $item->tanggal}}</td>
+                                            <td>{{ $item->tanggalsurat}}</td>
                                             <td>{{ $item->nosurat }}</td>
                                             <td>{{ $item->perihal }}</td>
                                             <td>{{ $item->tujuan }}</td>
@@ -133,7 +133,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Tanggal Surat</b>
-                                        <label>{{ $item->tanggal}}</label>
+                                        <label>{{ $item->tanggalsurat}}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -150,27 +150,20 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <b>Pengirim</b>
-                                        <label>{{ $item->pengirim }}</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Tujuan</b>
                                         <label>{{ $item->tujuan }}</label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <b class="text-center">Status</b>
-                                        <label class="text-center">{{ $item->status }}</label>
+                                        <b><center>Pengirim</center></b>
+                                        <label class="text-center">{{ $item->pengirim }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b class="text-center"><center>File</center></b>
                                         <label class="text-center"><a href="{{ route('view', $item->id) }}">View File</a></label>
-                                        <label class="text-center"><a href="{{ route('download', $item->file) }}">Download File</a></label>
                                         <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
                                     </div>
                                 </div>
@@ -186,7 +179,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Keterangan Verifikasi</b>
-                                        <label>{{ $item->keterangan}}</label>
+                                        <label>{{ $item->keteranganverifikasi}}</label>
                                     </div>
                                 </div>
                             </div>
@@ -201,13 +194,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>aksi</b>
-                                        <label>{{ $item->status}}</label>
+                                        <label>{{ $item->aksi}}</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <b>kepada</b>
-                                        <label>{{ $item->kepada}}</label>
+                                        <b>Tujuan</b>
+                                        <label>{{ $item->tujuandisposisi}}</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -224,27 +217,26 @@
                                     @method('put')
                                     @csrf
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-12">
                                             <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                                 <b>Tanggal Tindak Lanjut</b>
                                                 <input name="tanggaltindaklanjut" type="date" class="form-control" style="background-color: #bdbdbd">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                                <b>Hasil Tindak Lanjut</b>
-                                                <select class="form-control" name="status">
-                                                    <option hidden >Pilih Aksi</option>
-                                                        <option>Draft</option>
-                                                        <option>Dibatalkan</option>
-                                                        <option>Terkirim</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                                 <b>Petugas</b>
                                                 <input name="petugas" type="text" class="form-control" style="background-color: #bdbdbd">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                                <b>Hasil Tindak Lanjut</b>
+                                                <select class="form-control" name="hasiltindaklanjut">
+                                                    <option hidden >Pilih Aksi</option>
+                                                    <option>Tindak Lanjut Bagian</option>
+                                                    <option>Selesai</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>

@@ -47,7 +47,7 @@ class SuratmasukController extends Controller
         $this->suratmasuk->perihal = $request->perihal;
         $this->suratmasuk->tujuan = $request->tujuan;
         $this->suratmasuk->pengirim = $request->pengirim;
-        $this->suratmasuk->tanggal = $request->tanggal;
+        $this->suratmasuk->tanggalsurat = $request->tanggal;
         
 
         $rules = [
@@ -111,7 +111,7 @@ class SuratmasukController extends Controller
         $update->perihal = $request->perihal;
         $update->tujuan = $request->tujuan;
         $update->pengirim = $request->pengirim;
-        $update->tanggal = $request->tanggal;
+        $update->tanggalsurat = $request->tanggal;
 
         $update->save();
 
@@ -123,8 +123,9 @@ class SuratmasukController extends Controller
         $update = suratmasuk::findOrFail($id);
 
         $update->tanggalverifikasi = $request->tanggalverifikasi;
-        $update->status = $request->status;
-        $update->keterangan = $request->keterangan;
+        $update->verifikasi = $request->verifikasi;
+        $update->status = $request->verifikasi;
+        $update->keteranganverifikasi = $request->keteranganverifikasi;
 
         $update->save();
 
@@ -136,9 +137,10 @@ class SuratmasukController extends Controller
         $update = suratmasuk::findOrFail($id);
 
         $update->tanggaldisposisi = $request->tanggaldisposisi;
-        $update->status = $request->status;
+        $update->aksi = $request->aksi;
+        $update->status = $request->aksi;
         $update->keterangandisposisi = $request->keterangandisposisi;
-        $update->kepada = $request->kepada;
+        $update->tujuandisposisi = $request->tujuandisposisi;
 
         $update->save();
 
@@ -150,12 +152,13 @@ class SuratmasukController extends Controller
         $update = suratmasuk::findOrFail($id);
 
         $update->tanggaltindaklanjut = $request->tanggaltindaklanjut;
-        $update->status = $request->status;
+        $update->petugas = $request->petugas;
         $update->hasiltindaklanjut = $request->hasiltindaklanjut;
+        $update->status = $request->hasiltindaklanjut;
 
         $update->save();
 
-        return redirect()->route('disposisi');
+        return redirect()->route('tindaklanjut');
     }
 
 
@@ -168,7 +171,6 @@ class SuratmasukController extends Controller
         $hapus = suratmasuk::findOrFail($id);
         $file = $hapus->file;
         $filepath = 'storage/{{$file}}';
-        storage::delete($file);
         $hapus->delete();
         return redirect()->route('suratmasuk')->with('successdestroy', 'data dihapus');
     }
