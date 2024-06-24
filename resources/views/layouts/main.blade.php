@@ -171,7 +171,7 @@
 							<div class="collapse" id="forms">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="sidebar-style-1.html">
+										<a href="{{ route('tambahsuratkeluar') }}">
 											<span class="sub-item">Input Surat Keluar</span>
 										</a>
 									</li>

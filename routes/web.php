@@ -40,6 +40,9 @@ route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('
 Route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluar');
 Route::get('/formtambah/suratkeluar', [SuratkeluarController::class, 'create'])->name('tambahsuratkeluar');
 route::post('/suratkeluar', [SuratkeluarController::class, 'store'])->name('storesuratkeluar');
+Route::get('/hapussuratkeluar/{id}', [SuratkeluarController::class, 'destroy'])->name('hapussuratkeluar');
+route::put('/prosesupdate/{id}', [SuratkeluarController::class, 'update'])->name('updatesuratkeluar');
+
 
 
 Route::get('/main', function () {

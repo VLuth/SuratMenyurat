@@ -14,14 +14,15 @@ return new class extends Migration
         Schema::create('suratkeluars', function (Blueprint $table) {
             $table->id();
             $table->date('tanggal')->format('d/m/Y');
-            $table->string('nosurat');
-            $table->string('perihal');
-            $table->string('sifat');
-            $table->string('lampiran');
-            $table->string('kepada');
-            $table->string('isi');
-            $table->string('pengirim');
-            $table->string('status');
+            $table->string('nosurat')->nullable();
+            $table->string('perihal')->nullable();
+            $table->string('tujuan')->nullable();
+            $table->string('sifat')->nullable();
+            $table->string('lampiran')->nullable();
+            $table->string('kepada')->nullable();
+            $table->string('isi')->nullable();
+            $table->string('pengirim')->nullable();
+            $table->string('status')->nullable();
             $table->date('verifikasi')->nullable();
             $table->date('tanggalverifikasi')->nullable();
             $table->date('accketua')->nullable();

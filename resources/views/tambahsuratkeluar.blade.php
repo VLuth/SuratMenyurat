@@ -39,7 +39,7 @@
                                             <div class="col-md-6 col-lg-6">
                                                 <div class="form-group">
                                                     <label for="largeInput">No Surat</label>
-                                                    <input type="text" class="form-control form-control" name="nosurat" id="defaultInput" placeholder="No Surat">
+                                                    <input type="text" class="form-control form-control" name="nosuratkeluar" id="defaultInput" placeholder="No Surat">
                                                 </div>
                                             </div>
 											<div class="col-md-6 col-lg-6">
@@ -77,7 +77,7 @@
 											<div class="col-md-6 col-lg-6">
 												<div class="form-group">
 													<label for="exampleFormControlFile1">Upload File (PDF) </label>
-													<input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+													<input type="file" name="lampiran" class="form-control-file" id="exampleFormControlFile1">
 											</div>
 										</div>
 									</div>

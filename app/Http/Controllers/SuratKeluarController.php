@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\storage;
 use Illuminate\Support\Facades\response;
-use App\Models\suratkeluar;
+use App\Models\SuratKeluar;
 
 class SuratkeluarController extends Controller
 {
@@ -31,34 +31,40 @@ class SuratkeluarController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('file')){
-            $file = $request->file('file');
-            $text = $file->getClientOriginalName();
-            $filename = time() .".". $text;
-            $filepath = $file->storeAs('public', $filename);
-            $this->suratkeluar->file = $filename;
+            $suratkeluar = new SuratKeluar;
+
+        if ($request->hasFile('lampiran')){
+            $lampiran = $request->file('lampiran');
+            $text = $lampiran->getClientOriginalName();
+            $lampiranname = time() .".". $text;
+            $lampiranpath = $lampiran->storeAs('public', $lampiranname);
+            $suratkeluar->lampiran = $lampiranname;
             }
     
-            $this->suratkeluar->nosurat = $request->nosurat;
-            $this->suratkeluar->perihal = $request->perihal;
-            $this->suratkeluar->tujuan = $request->tujuan;
-            $this->suratkeluar->pengirim = $request->pengirim;
-            $this->suratkeluar->tanggal = $request->tanggal;
+            $suratkeluar->nosurat = $request->nosuratkeluar;
+            $suratkeluar->perihal = $request->perihal;
+            $suratkeluar->tujuan = $request->tujuan;
+            $suratkeluar->sifat = $request->sifat;
+            $suratkeluar->kepada = $request->kepada;
+            $suratkeluar->isi = $request->isi;
+            $suratkeluar->pengirim = $request->pengirim;
+            $suratkeluar->tanggal = $request->tanggal;
+            $suratkeluar->status = $request->status;
             
     
             $rules = [
                 'nosurat' => 'required',
                 'perihal' => 'required',
                 'tujuan' => 'required',
-                'file' => "required|mimes:application/pdf, application/x-pdf,application/acrobat, applications/vnd.pdf, text/pdf, text/x-pdf|max:10000"
+                'lampiran' => "required|mimes:application/pdf, application/x-pdf,application/acrobat, applications/vnd.pdf, text/pdf, text/x-pdf|max:10000"
             ];
     
             $message = [
                 'required' => 'form ini harus diisi',
-                'pdf' => 'file harus berupa pdf'
+                'pdf' => 'lampiran harus berupa pdf'
             ];
     
-            $this->suratkeluar->save();
+            $suratkeluar->save();
     
             return redirect()->route('suratkeluar')->with('successtambah', 'data buku berhasil ditambahkan!');
     }
@@ -87,12 +93,12 @@ class SuratkeluarController extends Controller
     {
         $update = suratkeluar::findOrFail($id);
 
-        if ($request->hasFile('file')){
-            $file = $request->file('file');
-            $text = $file->getClientOriginalName();
-            $filename = time() .".". $text;
-            $filepath = $file->storeAs('public', $filename);
-            $update->file = $filename;
+        if ($request->hasFile('lampiran')){
+            $lampiran = $request->file('lampiran');
+            $text = $lampiran->getClientOriginalName();
+            $lampiranname = time() .".". $text;
+            $lampiranpath = $lampiran->storeAs('public', $lampiranname);
+            $update->lampiran = $lampiranname;
         }
 
         $update->nosurat = $request->nosurat;
