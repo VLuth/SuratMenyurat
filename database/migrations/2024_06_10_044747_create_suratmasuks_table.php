@@ -32,7 +32,7 @@ return new class extends Migration
             $table->date('tanggaltindaklanjut')->nullable();
             $table->string('petugas')->nullable();
             $table->string('hasiltindaklanjut')->nullable();
-            $table->string('status')->default('Menunggu Verifikasi');
+            $table->string('status')->default('Menunggu verifikasi');
 
             $table->date('created_at')->nullable();
             $table->date('updated_at')->nullable();

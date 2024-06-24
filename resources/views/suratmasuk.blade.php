@@ -63,7 +63,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal</th>
+                                            <th>Tanggal Surat</th>
                                             <th>No Surat</th>
                                             <th>Perihal</th>
                                             <th>Tujuan</th>
@@ -79,7 +79,7 @@
                                         @foreach ($query as $item)
                                         <tr>
                                             <td>{{ $number }}</td>
-                                            <td>{{ $item->tanggal}}</td>
+                                            <td>{{ $item->tanggalsurat}}</td>
                                             <td>{{ $item->nosurat }}</td>
                                             <td>{{ $item->perihal }}</td>
                                             <td>{{ $item->tujuan }}</td>
@@ -124,7 +124,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <ul class="nav nav-pills nav-secondary" id="pills-tab" role="tablist">
+                    <ul class="nav nav-pills nav-secondary detail-suratmasuk" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="pills-suratmasuk-tab" data-toggle="pill" href="#pills-suratmasuk_{{$item->id}}" role="tab" aria-controls="pills-suratmasuk" aria-selected="true">Surat Masuk</a>
                         </li>
@@ -138,13 +138,13 @@
                             <a class="nav-link" id="pills-tindaklanjut-tab" data-toggle="pill" href="#pills-tindaklanjut_{{$item->id}}" role="tab" aria-controls="pills-tindaklanjut" aria-selected="false">Tindak Lanjut</a>
                         </li>
                     </ul>
-                    <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+                    <div class="tab-content mt-2 mb-3 detail-suratmasuk" id="pills-tabContent">
                         <div class="detail-suratmasuk tab-pane fade show active" id="pills-suratmasuk_{{$item->id}}" role="tabpanel" aria-labelledby="pills-suratmasuk-tab">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Tanggal Surat</b>
-                                        <label>{{ $item->tanggal}}</label>
+                                        <label>{{ $item->tanggalsurat}}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -161,27 +161,20 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <b>Pengirim</b>
-                                        <label>{{ $item->pengirim }}</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Tujuan</b>
                                         <label>{{ $item->tujuan }}</label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <b class="text-center">Status</b>
-                                        <label class="text-center">{{ $item->status }}</label>
+                                        <b><center>Pengirim</center></b>
+                                        <label class="text-center">{{ $item->pengirim }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b class="text-center"><center>File</center></b>
                                         <label class="text-center"><a href="storage/{{$item->file}}">View File</a></label>
-                                        <label class="text-center"><a href="{{route('download', $item->file)}}">Download File</a></label>
                                         <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
                                     </div>
                                 </div>
@@ -198,7 +191,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Verifikasi</b>
-                                        <label>{{ $item->status }}</label>
+                                        <label>{{ $item->verifikasi }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -211,12 +204,6 @@
                         </div>
                         <div class="tab-pane fade" id="pills-disposisi_{{$item->id}}" role="tabpanel" aria-labelledby="pills-disposisi-tab">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <b>Disposisi Ketua</b>
-                                        <label>{{ $item->status }}</label>
-                                    </div>
-                                </div>
                                 <div class="col-sm-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Tanggal Disposisi</b>
@@ -225,14 +212,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                        <b>aksi</b>
-                                        <label>{{ $item->keterangandisposisi }}</label>
+                                        <b>Aksi</b>
+                                        <label>{{ $item->aksi }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-default" style="background-color: #bdbdbd">
                                         <b>Keterangan</b>
-                                        <label>{{ $item->aksidisposisi }}</label>
+                                        <label>{{ $item->keterangandisposisi }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

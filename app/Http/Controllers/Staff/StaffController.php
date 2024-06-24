@@ -22,19 +22,19 @@ class StaffController extends Controller
     
     
     public function verifikasi(){
-        $query = SuratMasuk::where('status', 'Menunggu Verifikasi')
+        $query = SuratMasuk::where('status', 'Menunggu Verifikasi', 'Revisi Sekretaris')
         ->get();
         return view ('verifikasi', compact('query'));
     }
 
     public function disposisi(){
-        $query = SuratMasuk::where('status', 'Lanjut')
+        $query = SuratMasuk::whereIn('status', ['Verifikasi Sekretaris', 'Selesai'])
                     ->get();
                     return view ('disposisi', compact('query'));
                 }
                 
     public function tindaklanjut(){
-        $query = SuratMasuk::where('status', 'Ditindak Lanjuti')
+        $query = SuratMasuk::whereIn('status', ['Disposisi Ketua', 'selesai'])
                     ->get();
         return view ('tindaklanjut', compact('query'));
     }
