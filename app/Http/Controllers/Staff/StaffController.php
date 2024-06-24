@@ -19,6 +19,11 @@ class StaffController extends Controller
         return view ('suratmasuk', compact('query'));
     }
 
+    public function suratkeluarstaff(){
+        $query = SuratKeluar::all();
+        return view ('suratkeluar', compact('query'));
+    }
+
 
     public function verifikasi(){
         $query = SuratMasuk::where('status', 'Menunggu Verifikasi')
@@ -32,7 +37,5 @@ class StaffController extends Controller
         return view ('verifikasi', compact('query'));
     }
 
-    public function suratkeluarstaff(){
-        return view('suratkeluar');
-    }
+    
 }
