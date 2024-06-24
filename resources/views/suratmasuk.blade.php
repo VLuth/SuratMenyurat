@@ -124,50 +124,150 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="detail-suratmasuk">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Tanggal Surat</b>
-                                    <label>{{ $item->tanggal}}</label>
+                    <ul class="nav nav-pills nav-secondary" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-suratmasuk-tab" data-toggle="pill" href="#pills-suratmasuk_{{$item->id}}" role="tab" aria-controls="pills-suratmasuk" aria-selected="true">Surat Masuk</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-verifikasi-tab" data-toggle="pill" href="#pills-verifikasi_{{$item->id}}" role="tab" aria-controls="pills-verifikasi" aria-selected="false">Verifikasi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-disposisi-tab" data-toggle="pill" href="#pills-disposisi_{{$item->id}}" role="tab" aria-controls="pills-disposisi" aria-selected="false">Disposisi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-tindaklanjut-tab" data-toggle="pill" href="#pills-tindaklanjut_{{$item->id}}" role="tab" aria-controls="pills-tindaklanjut" aria-selected="false">Tindak Lanjut</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+                        <div class="detail-suratmasuk tab-pane fade show active" id="pills-suratmasuk_{{$item->id}}" role="tabpanel" aria-labelledby="pills-suratmasuk-tab">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tanggal Surat</b>
+                                        <label>{{ $item->tanggal}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>No Surat</b>
+                                        <label>{{ $item->nosurat }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Perihal</b>
+                                        <label>{{ $item->perihal }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Pengirim</b>
+                                        <label>{{ $item->pengirim }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tujuan</b>
+                                        <label>{{ $item->tujuan }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b class="text-center">Status</b>
+                                        <label class="text-center">{{ $item->status }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b class="text-center"><center>File</center></b>
+                                        <label class="text-center"><a href="storage/{{$item->file}}">View File</a></label>
+                                        <label class="text-center"><a href="{{route('download', $item->file)}}">Download File</a></label>
+                                        <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>No Surat</b>
-                                    <label>{{ $item->nosurat }}</label>
+                        </div>
+                        <div class="tab-pane fade" id="pills-verifikasi_{{$item->id}}" role="tabpanel" aria-labelledby="pills-verifikasi-tab">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tanggal Verifikasi</b>
+                                        <label>{{ $item->tanggalverifikasi}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Verifikasi</b>
+                                        <label>{{ $item->status }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Keterangan</b>
+                                        <label>{{ $item->keteranganverifikasi }}</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Perihal</b>
-                                    <label>{{ $item->perihal }}</label>
+                        </div>
+                        <div class="tab-pane fade" id="pills-disposisi_{{$item->id}}" role="tabpanel" aria-labelledby="pills-disposisi-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Disposisi Ketua</b>
+                                        <label>{{ $item->status }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tanggal Disposisi</b>
+                                        <label>{{ $item->tanggaldisposisi}}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>aksi</b>
+                                        <label>{{ $item->keterangandisposisi }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Keterangan</b>
+                                        <label>{{ $item->aksidisposisi }}</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tujuan</b>
+                                        <label>{{ $item->tujuandisposisi }}</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Pengirim</b>
-                                    <label>{{ $item->pengirim }}</label>
+                        </div>
+                        <div class="tab-pane fade" id="pills-tindaklanjut_{{$item->id}}" role="tabpanel" aria-labelledby="pills-tindaklanjut-tab">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Tanggal Tindak Lanjut</b>
+                                        <label>{{ $item->tanggaltindaklanjut}}</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b>Tujuan</b>
-                                    <label>{{ $item->tujuan }}</label>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>petugas</b>
+                                        <label>{{ $item->petugas }}</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center">Status</b>
-                                    <label class="text-center">{{ $item->status }}</label>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Hasil Tindak Lanjut</b>
+                                        <label>{{ $item->hasiltindaklanjut }}</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group form-group-default" style="background-color: #bdbdbd">
-                                    <b class="text-center"><center>File</center></b>
-                                    <label class="text-center"><a href="storage/{{$item->file}}">View File</a></label>
-                                    <label class="text-center"><a href="{{route('download', $item->file)}}">Download File</a></label>
-                                    <iframe src="storage/{{ $item->file }}" style="margin-left: 70px"></iframe>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-default" style="background-color: #bdbdbd">
+                                        <b>Status</b>
+                                        <label>{{ $item->status }}</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
