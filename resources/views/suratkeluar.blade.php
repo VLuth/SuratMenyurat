@@ -48,10 +48,10 @@
                                         <button type="submit" class="btn btn-success btn-sm"> Cari </button>
                                     </div>
                                     <div class="col-sm" style="align-items:center">
-                                        <button href="{{route('suratmasuk')}}" class="btn btn-danger btn-sm"> reset </button>
+                                        <button href="{{route('suratkeluar')}}" class="btn btn-danger btn-sm"> reset </button>
                                     </div>
                                 </form>
-                                <a class="btn btn-primary btn-round ml-auto" href="{{ route('tambahsuratmasuk') }}">
+                                <a class="btn btn-primary btn-round ml-auto" href="{{ route('tambahsuratkeluar') }}">
                                     <i class="fa fa-plus"></i>
                                     Tambah Data
                                 </a>
@@ -87,10 +87,10 @@
                                             <td>{{ $item->status }}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="#" class="btn btn-link btn-primary btn-lg toggle-edit" data-toggle="modal" data-target="#detailsuratmasuk_{{ $item->id }}" data-original-title="Detail" data-id="{{ $item->id }}">
+                                                    <a href="#" class="btn btn-link btn-primary btn-lg toggle-edit" data-toggle="modal" data-target="#detailsuratkeluar_{{ $item->id }}" data-original-title="Detail" data-id="{{ $item->id }}">
                                                         <i class="fa fa-info-circle fa-lg"></i>
                                                     </a>
-                                                    <a href="{{ route('hapussuratmasuk', $item->id) }}" class="btn btn-link btn-danger" onclick="return confirm('Yakin?')" data-original-title="Hapus">
+                                                    <a href="{{ route('hapussuratkeluar', $item->id) }}" class="btn btn-link btn-danger" onclick="return confirm('Yakin?')" data-original-title="Hapus">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </div>
@@ -112,7 +112,7 @@
 
 
     @foreach ($query as $item)
-    <div class="modal fade" id="detailsuratmasuk_{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="detailsuratkeluar_{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="background-color: ">
                 <div class="modal-header no-bd">
@@ -124,7 +124,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="detail-suratmasuk">
+                    <div class="detail-suratkeluar">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group form-group-default" style="background-color: #bdbdbd">
@@ -173,8 +173,8 @@
                         </div>
                     </div>
 
-                    <div class="edit-suratmasuk" style="display: none">
-                        <form method="post" action="{{route('updatesuratmasuk', $item->id)}}">
+                    <div class="edit-suratkeluar" style="display: none">
+                        <form method="post" action="{{route('updatesuratkeluar', $item->id)}}">
                             @method('put')
                             @csrf
                             <div class="row">
@@ -217,15 +217,15 @@
                                 </div>
                             </div>
                             <div class="col-md-12" style="display: flex; justify-content: flex-end; margin-top: 50px; margin-bottom: -30px">
-                                <button type="submit" class="btn btn-info edit-suratmasuk" style="display: none; margin-right: 10px">Simpan</button>
-                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit edit-suratmasuk" style="display: none; margin-right: -15px">Detail</button>
+                                <button type="submit" class="btn btn-info edit-suratkeluar" style="display: none; margin-right: 10px">Simpan</button>
+                                <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit edit-suratkeluar" style="display: none; margin-right: -15px">Detail</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer no-bd">
-                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit detail-suratmasuk">Edit</button>
-                    <button type="button" class="btn btn-danger detail-suratmasuk" data-dismiss="modal">Tutup</button>
+                    <button type="button" id="edit_{{ $item->id }}" class="btn btn-primary tampilkan-edit detail-suratkeluar">Edit</button>
+                    <button type="button" class="btn btn-danger detail-suratkeluar" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>
@@ -238,8 +238,8 @@
         $(document).ready(function() {
             $('.tampilkan-edit').click(function() {
                 var modalId = $(this).attr('id').split('_')[1];
-                $('#detailsuratmasuk_' + modalId + ' .detail-suratmasuk').toggle();
-                $('#detailsuratmasuk_' + modalId + ' .edit-suratmasuk').toggle();
+                $('#detailsuratkeluar_' + modalId + ' .detail-suratkeluar').toggle();
+                $('#detailsuratkeluar_' + modalId + ' .edit-suratkeluar').toggle();
             });
         });
     </script>

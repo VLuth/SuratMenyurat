@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SuratmasukController;
+use App\Http\Controllers\SuratkeluarController;
 use App\Http\Controllers\Staff\StaffController;
 use App\Http\Controllers\Sekretaris\SekretarisController;
 use App\Http\Controllers\Ketua\KetuaController;
 use App\Http\Controllers\Petugas\PetugasController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/suratmasuk/{id}', 'SuratMasukController@show')->name('tampilkansuratmasuk');
 
@@ -32,6 +34,12 @@ Route::get('/tindaklanjut', [StaffController::class, 'tindaklanjut'])->name('tin
 route::put('/tindaklanjut/{id}', [SuratmasukController::class, 'tindaklanjut'])->name('tindaklanjutsuratmasuk');
 
 route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluarstaff');
+
+// SURAT KELUAR
+
+Route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('suratkeluar');
+Route::get('/formtambah/suratkeluar', [SuratkeluarController::class, 'create'])->name('tambahsuratkeluar');
+route::post('/suratkeluar', [SuratkeluarController::class, 'store'])->name('storesuratkeluar');
 
 
 Route::get('/main', function () {
