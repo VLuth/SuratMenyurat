@@ -18,8 +18,7 @@ Route::get('/suratmasuk', [StaffController::class, 'suratmasukstaff'])->name('su
 Route::get('/formtambah/suratmasuk', [SuratmasukController::class, 'create'])->name('tambahsuratmasuk');
 route::post('/suratmasuk', [SuratmasukController::class, 'store'])->name('storesuratmasuk');
 route::get('/download{file}', [SuratmasukController::class, 'downloadfile'])->name('download');
-route::post('/view/file/{id}', [SuratmasukController::class, 'viewfile'])->name('view');
-route::put('/prosesupdate/{id}', [SuratmasukController::class, 'update'])->name('updatesuratmasuk');
+Route::put('prosesupdatesuratmasuk/{id}', [SuratmasukController::class, 'update'])->name('updatesuratmasuk');
 route::get('/formedit/suratmasuk/{id}', [SuratmasukController::class, 'edit'])->name('editsuratmasuk');
 route::get('/filter', [SuratmasukController::class, 'filter'])->name('filter');
 Route::get('/hapussuratmasuk/{id}', [SuratmasukController::class, 'destroy'])->name('hapussuratmasuk');
@@ -41,7 +40,7 @@ Route::get('/suratkeluar', [StaffController::class, 'suratkeluarstaff'])->name('
 Route::get('/formtambah/suratkeluar', [SuratkeluarController::class, 'create'])->name('tambahsuratkeluar');
 route::post('/suratkeluar', [SuratkeluarController::class, 'store'])->name('storesuratkeluar');
 Route::get('/hapussuratkeluar/{id}', [SuratkeluarController::class, 'destroy'])->name('hapussuratkeluar');
-route::put('/prosesupdate/{id}', [SuratkeluarController::class, 'update'])->name('updatesuratkeluar');
+route::put('/prosesupdatesuratkeluar/{id}', [SuratkeluarController::class, 'update'])->name('updatesuratkeluar');
 
 
 
