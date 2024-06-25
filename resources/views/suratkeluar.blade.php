@@ -5,7 +5,7 @@
 
             <div class="page-inner">
                 <div class="page-header">
-                    <h4 class="page-title">Index Surat Masuk</h4>
+                    <h4 class="page-title">Riwayat Surat Keluar</h4>
                     <ul class="breadcrumbs">
                         <li class="nav-home">
                             <a href="#">

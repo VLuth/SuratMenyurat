@@ -191,7 +191,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="forms/forms.html">
+										<a href="{{route('suratkeluar')}}">
 											<span class="sub-item">Riwayat</span>
 										</a>
 									</li>
